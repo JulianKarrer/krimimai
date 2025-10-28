@@ -1,0 +1,30 @@
+local_backend: true
+
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: static/img
+public_folder: /img
+
+collections:
+  - name: 'settings'
+    label: 'Einstellungen'
+    files:
+      - label: "Haupteinstellungen"
+        name: "global"
+        file: "content/settings.yml"
+        preview:
+          false
+        fields:
+          - { 
+            name: 'date', 
+            label: 'Datum der Veranstaltung', 
+            hint: 'Von wann bis wann findet die Veranstaltung statt?', 
+            widget: 'string' 
+          }
+          - { 
+            name: 'bg-colour', 
+            label: 'Hintergrundfarbe', 
+            widget: 'color' 
+          }

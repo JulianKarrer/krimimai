@@ -1,0 +1,33 @@
+.dateheader {
+  position: absolute;
+  text-align: right;
+  bottom: 0;
+  right: 0;
+  margin: var(--inner-padding);
+
+
+  @media (max-width: 145vh) {
+    bottom: var(--font-lg);
+  }
+
+  @media (max-width: 125vh) {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    bottom: 40%;
+    /* calc(2.5 * var(--font-lg)); */
+    margin: 0;
+  }
+}
+
+.container {
+  height: var(--fullpage-inner-height);
+  border: var(--border);
+  margin-bottom: var(--content-gutter);
+  margin-top: calc(2 * var(--content-gutter));
+  position: relative;
+}
+
+.container:first-child {
+  margin-top: 0;
+}

@@ -1,12 +1,38 @@
-/**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-ssr/
- */
+import * as React from "react"
 
-/**
- * @type {import('gatsby').GatsbySSR['onRenderBody']}
- */
-exports.onRenderBody = ({ setHtmlAttributes }) => {
-  setHtmlAttributes({ lang: `en` })
+export const onRenderBody = ({ setHeadComponents }) => {
+  setHeadComponents([
+    <link
+      rel="preload"
+      href="/fonts/Roboto-Medium.ttf"
+      as="font"
+      type="font/truetype"
+      crossOrigin="anonymous"
+      key="interFont"
+    />,
+    <link
+      rel="preload"
+      href="/fonts/Roboto-Medium.woff"
+      as="font"
+      type="font/woff"
+      crossOrigin="anonymous"
+      key="interFont"
+    />,
+    <link
+      rel="preload"
+      href="/fonts/Baton-Medium.ttf"
+      as="font"
+      type="font/truetype"
+      crossOrigin="anonymous"
+      key="interFont"
+    />,
+    <link
+      rel="preload"
+      href="/fonts/Baton-Medium.woff"
+      as="font"
+      type="font/woff"
+      crossOrigin="anonymous"
+      key="interFont"
+    />,
+  ])
 }

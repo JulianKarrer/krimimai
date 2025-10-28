@@ -8,7 +8,6 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
 import "./layout.css"
 
 const Layout = ({ children }) => {
@@ -24,26 +23,35 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      {/* <Header siteTitle={data.site.siteMetadata?.title || "Title"} /> */}
+      {/* outer container  */}
       <div
         style={{
-          margin: `0 auto`,
-          maxWidth: `var(--size-content)`,
-          padding: `var(--size-gutter)`,
+          margin: "0 auto",
+          minHeight: "var(--min-height)",
+          background: "var(--color-bg)",
+          padding: "var(--content-gutter)",
         }}
       >
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `var(--space-5)`,
-            fontSize: `var(--font-sm)`,
-          }}
-        >
-          © {new Date().getFullYear()} &middot; Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
+        {/* inner container */}
+        <div style={{
+          margin: "0 auto",
+        }}>
+          <main>{children}</main>
+          <footer style={{ marginTop: "calc(2 * var(--content-gutter))" }}>
+            <div className="footer-grid">
+              <div className="footer-cell"><span>Kontakt</span></div>
+              <div className="footer-cell"><span>Pressematerial herunterladen</span></div>
+              <div className="footer-cell"><span>Impressum / Datenschutz</span></div>
+            </div>
+
+            <div className="footer-grid" style={{ gridTemplateColumns: "1fr 5fr" }}>
+              <div className="footer-cell"><span>Partner</span></div>
+              <div className="footer-cell"><span>Pressematerial herunterladen</span></div>
+            </div>
+          </footer>
+        </div >
+      </div >
     </>
   )
 }
