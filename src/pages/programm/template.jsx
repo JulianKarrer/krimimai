@@ -138,8 +138,8 @@ export default function ProgrammpunktTemplate({ data }) {
   )
 }
 
-export const pageQuery = graphql`
-  query ($id: String!) {
+export const query = graphql`
+  query ($id: String) {
     markdownRemark(id: {eq: $id}) {
       frontmatter {
         author
