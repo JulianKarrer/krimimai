@@ -6,6 +6,7 @@ backend:
 
 media_folder: static/img
 public_folder: /img
+show_preview_links: false
 
 collections:
   - name: 'settings'
@@ -28,3 +29,114 @@ collections:
             label: 'Hintergrundfarbe', 
             widget: 'color' 
           }
+          - { 
+            name: 'bg-colour-subpage', 
+            label: 'Hintergrundfarbe der Unterseiten (Programmpunkte)', 
+            widget: 'color' 
+          }
+  - name: 'programm'
+    label: 'Programmpunkte'
+    folder: 'content/programm'
+    path: '{{year}}/{{slug}}'
+    create: true
+    identifier_field: name
+    preview:
+      false
+    fields:
+    # mandatory fields first
+    - {name: "name", label: "Veranstaltungsname", widget: "string", hint: "Was soll oben rechts angezeigt werden? Der Name sollte eindeutig sein, da er genutzt wird um die URL zu der Website dieses Programmpunktes zu generieren und sich daher nicht mit anderen Namen überschneiden sollte."}
+    - {name: "author", label: "Untertitel / Autoren",widget: "string", hint: "Was soll unten links angezeigt werden?"}
+    - name: "ort"
+      label: "Veranstaltungsort / Adresse"
+      hint: "darf mehrere Zeilen lang sein um z.B. die ganze Adresse und den Raum zu beschreiben"
+      widget: "text"
+    # now non-required fields with single entries
+    - name: "einlass"
+      label: "Einlass"
+      widget: "datetime"
+      required: false
+      date_format: "DD.MM.YYYY"
+      time_format: "HH:mm"
+    - name: "beginn"
+      label: "Beginn"
+      widget: "datetime"
+      required: false
+      date_format: "DD.MM.YYYY"
+      time_format: "HH:mm"
+    - name: "price"
+      label: "Preis"
+      hint: "Zahl in Euro, darf eine Kommazahl sein (getrennt mit . und nicht , also z.B. 10.50), wird wenn nötig auf den nächsten Cent gerundet"
+      required: false
+      value_type: "float"
+      min: 0.0
+      step: 1.0
+    - name: "ticketlink"
+      hint: "volle URL, z.B. https://example.org/"
+      label: "Ticket Link (URL)"
+      widget: "string"
+      required: false
+    - label: "Künstlerliste"
+      hint: "Hier wird die Liste der Künstler mit jeweils einem Bild und Namen erstellt, aus der das Titelbild des Programmpunkts und der Eintrag in der Programmübersicht generiert werden. Die Liste muss daher mindestens einen Eintrag haben."
+      name: "portrait-list"
+      widget: "list"
+      allow_add: true
+      allow_reorder: true
+      allow_remove: true
+      label_singular: "Künstler"
+      min: 1
+      max: 8
+      add_to_top: true
+      collapsed: false
+      field: 
+        label: Künstler
+        name: portrait-obj
+        widget: object
+        fields: 
+          - label: "Portait"
+            name: "portrait-image"
+            widget: "image"
+            hint: "Gerne Bilder in voller Auflösung hochladen, das Website-Backend übernimmt das Skalieren und die Optimierung für mobile Nutzer. Nur extrem große Bilder (mehr als 5-10MB) sind zu vermeiden. Bitte Dateinamen vor dem Upload bereinigen, z.B. also Leerzeichen und Sonderzeichen sowie Umlaute entfernen, um Probleme vorzubeugen."
+          - label: "Name"
+            name: "portrait-name"
+            widget: "string"
+    - name: contents
+      label: "Seiteninhalt"
+      hint: "Hier kann der Seiteninhalt als eine Liste von Segmenten zusammengebaut werden. Jedes Segment hat eine optionale Überschrift sowie eine Liste von Bildern und Texten. Jedes Bild- oder Textfeld nimmt für Nutzer mit ausreichend breitem Bildschirm die halbe Fläche ein."
+      widget: list
+      allow_add: true
+      allow_reorder: true
+      allow_remove: true
+      label_singular: "Segment"
+      add_to_top: false
+      collapsed: false
+      field:
+        label: "Segment"
+        name: segment
+        widget: object
+        fields: 
+          - label: "Überschrift"
+            name: "segment-title"
+            widget: "string"
+            hint: "Die Überschrift des Segments, falls gegeben"
+            required: false
+          - label: "Inhalte"
+            hint: "Inhalte des Segments: Unter der Überschrift wird diese Liste von Blöcken, bestehend aus jeweils Bildern oder Texten, nacheinander angezeigt."
+            name: "segment-contents"
+            widget: "list"
+            allow_add: true
+            allow_reorder: true
+            allow_remove: true
+            label_singular: "Block"
+            add_to_top: true
+            collapsed: false
+            types:
+            - label: Bild 
+              name: block-image-obj
+              widget: object
+              fields: 
+              - {label: Bildupload, name: block-image, widget: image}
+            - label: Text
+              name: block-text-obj
+              widget: object
+              fields: 
+              - {label: Texteditor, name: block-text, widget: text}

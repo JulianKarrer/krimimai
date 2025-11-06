@@ -19,15 +19,3 @@
     margin: 0;
   }
 }
-
-.container {
-  height: var(--fullpage-inner-height);
-  border: var(--border);
-  margin-bottom: var(--content-gutter);
-  margin-top: calc(2 * var(--content-gutter));
-  position: relative;
-}
-
-.container:first-child {
-  margin-top: 0;
-}

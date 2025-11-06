@@ -10,16 +10,17 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import "./layout.css"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, style }) => {
+
   const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
+    query BgColourQuery {
+      contentYaml {
+        bg_colour
       }
     }
   `)
+  const { contentYaml } = data
+  const { bg_colour } = contentYaml
 
   return (
     <>
@@ -29,8 +30,9 @@ const Layout = ({ children }) => {
         style={{
           margin: "0 auto",
           minHeight: "var(--min-height)",
-          background: "var(--color-bg)",
+          background: bg_colour,
           padding: "var(--content-gutter)",
+          ...style
         }}
       >
         {/* inner container */}
@@ -45,7 +47,7 @@ const Layout = ({ children }) => {
               <div className="footer-cell"><span>Impressum / Datenschutz</span></div>
             </div>
 
-            <div className="footer-grid" style={{ gridTemplateColumns: "1fr 5fr" }}>
+            <div className="footer-grid footer-grid-15">
               <div className="footer-cell"><span>Partner</span></div>
               <div className="footer-cell"><span>Pressematerial herunterladen</span></div>
             </div>

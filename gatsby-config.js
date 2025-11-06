@@ -9,10 +9,10 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `Krimimai`,
+    description: `Das Allgäuer Krimi-Festival`,
+    author: `Krimimai`,
+    siteUrl: `https://www.krimimai.de`,
   },
   plugins: [
     `gatsby-plugin-decap-cms`,
@@ -21,11 +21,34 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
+        path: `${__dirname}/content`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `srcimages`,
         path: `${__dirname}/src/images`,
       },
     },
+    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: [`avif`, `webp`, `auto`],
+          placeholder: `blurred`,
+          quality: 50,
+          backgroundColor: `transparent`,
+          blurredOptions: {},
+          jpgOptions: {},
+          pngOptions: {},
+          webpOptions: {},
+          avifOptions: {},
+        },
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -37,8 +60,29 @@ module.exports = {
         // https://css-tricks.com/meta-theme-color-and-trickery/
         theme_color: `00A8E9`,
         display: `minimal-ui`,
-        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.png`,
       },
     },
+    `gatsby-transformer-yaml`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `./content/`,
+      },
+    },
+    // allow import of svg files
+    {
+      resolve: "gatsby-plugin-react-svg",
+      // options: {
+      //   rule: {
+      //     include: /\.svg$/,
+      //     options: {
+      //       props: {
+      //         className: "my-class",
+      //       }
+      //     }
+      //   }
+      // }
+    }
   ],
 }

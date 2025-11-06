@@ -1,4 +1,5 @@
 import * as React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 // import { Link } from "gatsby"
 // import { StaticImage } from "gatsby-plugin-image"
 
@@ -7,45 +8,55 @@ import Seo from "../components/seo"
 
 import * as styles from "./index.module.css"
 
+const IndexPage = ({ children }) => {
+  const data = useStaticQuery(graphql`
+    query DateQuery {
+      contentYaml {
+        date
+      }
+    }
+    `)
+  const { contentYaml } = data
+  const { date } = contentYaml
 
-const IndexPage = () => (
-  <Layout>
+  return (
+    <Layout>
+      {/* full page header */}
+      <div className="container">
+        <h1 style={{
+          textAlign: "right",
+          position: "absolute",
+          top: 0,
+          right: 0,
+        }} className="tight">
+          Mörderischer <br />Mai
+        </h1>
 
-    {/* full page header */}
-    <div className={styles.container}>
-      <h1 style={{
-        textAlign: "right",
-        position: "absolute",
-        top: 0,
-        right: 0,
-      }}>
-        Mörderischer <br />Mai
-      </h1>
+        <h2 className={styles.dateheader}>{date}</h2>
 
-      <h2 className={styles.dateheader}>8. Mai bis 13. Mai</h2>
+        <h1 style={{
+          textAlign: "left",
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+        }} className="tight">
+          Allgäuer <br />Krimifestival
+        </h1>
+      </div >
 
-      <h1 style={{
-        textAlign: "left",
-        position: "absolute",
-        bottom: 0,
-        left: 0,
-      }}>
-        Allgäuer <br />Krimifestival
-      </h1>
-    </div >
-
-    {/* programm */}
-    <div className={styles.container}>
-      <h1 style={{ borderBottom: "var(--border)" }}>Programm</h1>
-      <p style={{ padding: "var(--inner-padding)" }}>
-        Der mörderische Mai hat einiges zu bieten.<br />
-        Folgende Tatorte sind geplant:
-      </p>
-    </div>
+      {/* programm */}
+      <div className="container">
+        <h1 style={{ borderBottom: "var(--border)" }}>Programm</h1>
+        <p style={{ padding: "var(--inner-padding)" }}>
+          Der mörderische Mai hat einiges zu bieten.<br />
+          Folgende Tatorte sind geplant:
+        </p>
+      </div>
 
 
-  </Layout >
-)
+    </Layout>
+  )
+}
 
 /**
  * Head export to define metadata for the page
