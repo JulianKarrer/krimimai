@@ -1,12 +1,22 @@
 import * as React from "react"
 
+import { Link } from "gatsby"
+
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 const NotFoundPage = () => (
   <Layout>
-    <h1>404: Not Found</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <div className="container">
+      <h1>404: Seite nicht gefunden.</h1>
+      <div style={{ padding: "var(--inner-padding)" }}>
+        <p>
+          <span>Diese Seite wurde leider ermordet. </span>
+          <Link to="/">Klicken Sie hier um auf der Hauptseite zu ermitteln.</Link>
+        </p>
+      </div>
+
+    </div>
   </Layout>
 )
 

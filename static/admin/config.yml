@@ -46,6 +46,10 @@ collections:
     # mandatory fields first
     - {name: "name", label: "Veranstaltungsname", widget: "string", hint: "Was soll oben rechts angezeigt werden? Der Name sollte eindeutig sein, da er genutzt wird um die URL zu der Website dieses Programmpunktes zu generieren und sich daher nicht mit anderen Namen überschneiden sollte."}
     - {name: "author", label: "Untertitel / Autoren",widget: "string", hint: "Was soll unten links angezeigt werden?"}
+    - name: "sorting"
+      label: "Priorität"
+      required: true
+      hint: "Nach dieser Priorität werden Programmpunkte in der Übersicht sortiert. Es erfolgt eine lexikografische Sortierung, also Zeichen für Zeichen, wobei Ziffern wie üblich verglichen werden (0<1<2<3<...<9) und danach Buchstaben alphabetisch (9 < a < b < ...). Höhere Werte werden früher angezeigt, also 'z999' hat viel höhere Priorität als '1' oder 'b12'."
     - name: "ort"
       label: "Veranstaltungsort / Adresse"
       hint: "darf mehrere Zeilen lang sein um z.B. die ganze Adresse und den Raum zu beschreiben"

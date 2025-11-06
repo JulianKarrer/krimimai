@@ -212,16 +212,25 @@ img {
 
 .programm-grid {
   padding: var(--inner-padding);
-  display: flex;
+  /* display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  /* justify-content: space-around; */
+  flex-wrap: wrap; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 350px));
+  justify-content: center;
   gap: var(--inner-padding);
 }
 
-.programm-grid>* {
+/* .programm-grid>* {
   max-width: 350px;
-}
+} */
+
+/* @media (max-width: calc(700px + 20vw)) {
+  .programm-grid {
+    justify-content: center;
+  }
+} */
+
 
 /* programm subpage-specific css */
 

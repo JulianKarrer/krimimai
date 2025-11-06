@@ -1,6 +1,7 @@
 ---
 name: Beispiel Veranstaltung
-author: Beispielautor
+author: Beispiel Autor, Bei Speel Auror, Bleistift Amthor
+sorting: "1"
 ort: |-
   Große Beispielhalle
   Beispielstraße 37
@@ -42,7 +43,9 @@ contents:
 
             Donec faucibus, enim non mollis maximus, nisl orci sollicitudin sapien, sit amet semper nunc tellus a urna. Nulla blandit erat non accumsan auctor. Cras eu lorem justo. Sed eu magna justo. Nullam tincidunt rutrum magna. Aenean at magna tempor velit tempor lacinia. Nulla commodo vitae erat consectetur mollis. Suspendisse efficitur eros et nunc porttitor egestas. Nam nec justo enim. Sed ac tincidunt nisi. Donec molestie commodo augue, sed vestibulum dui efficitur id. Aenean sagittis nulla elit, id accumsan nunc dignissim sit amet. In pulvinar velit id neque vulputate, in ornare orci porta. Nulla purus ipsum, bibendum vel maximus id, mollis id est. Pellentesque pretium varius nulla.
         - type: block-text-obj
-          block-text: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+          block-text: ein
+            laaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaanges
+            Wort um das Layout zu testen
   - segment:
       segment-title: ""
       segment-contents:

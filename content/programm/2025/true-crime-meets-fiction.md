@@ -1,9 +1,12 @@
 ---
 name: True Crime Meets Fiction
 author: Peter Probst
+sorting: "99"
 ort: |-
   Landgericht Memmingen, Hallhof 1, MM
   Schwurgerichtssaal 132
+einlass: ""
+price: ""
 portrait-list:
   - portrait-obj:
       portrait-image: autorenbild.png

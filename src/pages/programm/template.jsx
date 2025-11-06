@@ -6,19 +6,18 @@ import Layout from "../../components/layout"
 import Pfeil from "../../images/arrows/pfeil_tickets.svg"
 
 function ContentHeader({ header }) {
-  return <>
+  const valid_header = !(header === null || header === "" || header === undefined)
+  return valid_header ? <>
     <div className="bordered-topless">
       <h1>{header}</h1>
     </div>
-  </>
+  </> : <></>
 }
 function LineBreak({ text, style }) {
   return <span style={{ maxWidth: "100%", whiteSpace: "pre-wrap", ...style }}>{text}</span>
 }
 
-export default function ProgrammpunktTemplate({
-  data,
-}) {
+export default function ProgrammpunktTemplate({ data }) {
   // destructure the data passed in from the query that generated the site:
 
   // first get the background colour setting
@@ -33,10 +32,6 @@ export default function ProgrammpunktTemplate({
   const { portrait_list } = frontmatter
   const { ticketlink } = frontmatter
 
-  const { contents } = frontmatter
-  const segments = contents.map((obj) => obj.segment)
-
-  console.log(frontmatter)
 
   // get names and portraits of artists
   const portraits = portrait_list.map((img) => {
@@ -47,6 +42,9 @@ export default function ProgrammpunktTemplate({
   })
 
   const price = parseFloat(frontmatter?.price)
+  const isnt = (val) => val === null || val === undefined || val === ""
+  const has_einlass = !isnt(frontmatter?.einlass)
+  const has_beginn = !isnt(frontmatter?.beginn)
 
   return (
     <Layout style={{ background: bg_colour_subpage }}>
@@ -83,10 +81,10 @@ export default function ProgrammpunktTemplate({
       <div className="bordered halved-mobilefull" style={{ marginTop: 0, borderTop: 0 }}>
         <div className="padded">
           {/* conditionally render einlass and begin fields, their seperator and a linebreak */}
-          {frontmatter?.einlass ? <>{frontmatter.einlass.split("T").at(-1)} Einlass</> : <></>}
-          {frontmatter?.einlass && frontmatter?.beginn ? <> / </> : <></>}
-          {frontmatter?.beginn ? <>{frontmatter.beginn.split("T").at(-1)} Beginn</> : <></>}
-          {frontmatter?.einlass || frontmatter?.beginn ? <br /> : <></>}
+          {has_einlass ? <>{frontmatter.einlass.split("T").at(-1)} Einlass</> : <></>}
+          {has_einlass && has_beginn ? <> / </> : <></>}
+          {has_beginn ? <>{frontmatter.beginn.split("T").at(-1)} Beginn</> : <></>}
+          {has_einlass || has_beginn ? <br /> : <></>}
           {/* always print field ort */}
           <LineBreak text={ort} />
           {/* conditionally linebreak and render price, rounding to 2 decimal places if not an integer */}
@@ -115,13 +113,10 @@ export default function ProgrammpunktTemplate({
 
       {/* page contents */}
 
-      {segments.map((segment, i) => <>
-        {segment.segment_title !== "" ?
-          <ContentHeader key={"content-header" + i} header={segment.segment_title}></ContentHeader>
-          : <></>}
+      {frontmatter?.contents ? frontmatter?.contents.map(({ segment }, i) => <>
+        <ContentHeader key={"content-header" + i} header={segment.segment_title}></ContentHeader>
         <div className="bordered-topless padded halved-mobilefull" key={"content-block" + i}>
           {segment.segment_contents.map((block, j) => {
-            console.log(block.block_image)
             return <div className="block-container">
               {block.block_text ?
                 <LineBreak text={block.block_text} />
@@ -137,7 +132,7 @@ export default function ProgrammpunktTemplate({
           })}
         </div >
       </>)
-      }
+        : <></>}
 
     </Layout >
   )

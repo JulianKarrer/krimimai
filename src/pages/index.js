@@ -8,6 +8,8 @@ import Seo from "../components/seo"
 
 import * as styles from "./index.module.css"
 
+const slugify = require('slugify')
+
 function ProgrammPunkt({ style, className, programmpunkt, bg_colour }) {
   const portraits = programmpunkt.portrait_list.map((img) => {
     return {
@@ -15,8 +17,8 @@ function ProgrammPunkt({ style, className, programmpunkt, bg_colour }) {
       name: img.portrait_obj.portrait_name
     }
   })
-  const linkto = "/programm/" + programmpunkt.path.split("/").at(-1).split(".md").at(0)
-  console.log(programmpunkt, linkto)
+
+  const linkto = "/programm/" + slugify(programmpunkt.name, { lower: true })
   return (
     <div style={{ background: bg_colour, border: "var(--border)", ...style }} className={className}>
       {/* portraits */}
@@ -53,8 +55,8 @@ const IndexPage = () => {
       }
       allMarkdownRemark {
         nodes {
-          fileAbsolutePath
           frontmatter {
+            sorting
             author
             beginn
             einlass
@@ -79,7 +81,14 @@ const IndexPage = () => {
   const { contentYaml, allMarkdownRemark } = data
   const { date, bg_colour_subpage } = contentYaml
   const { nodes } = allMarkdownRemark
-  const programmpunkte = nodes.map(({ frontmatter, fileAbsolutePath }) => ({ path: fileAbsolutePath, ...frontmatter }))
+  const programmpunkte = nodes.map(({ frontmatter }) => (frontmatter))
+    .sort((ia, ib) => {
+      const a = ia.sorting
+      const b = ib.sorting
+      return a >= b ? 1 : (
+        a <= b ? 0 : -1
+      )
+    })
 
   return (
     <Layout>

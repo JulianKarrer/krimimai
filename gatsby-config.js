@@ -9,7 +9,7 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Krimimai`,
+    title: `Mörderischer Mai`,
     description: `Das Allgäuer Krimi-Festival`,
     author: `Krimimai`,
     siteUrl: `https://www.krimimai.de`,
