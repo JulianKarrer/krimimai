@@ -7,6 +7,7 @@
   --content-gutter: 8vmin;
 
   --inner-padding: 4vmin;
+  --small-padding: calc(0.5*var(--inner-padding));
   --fullpage-inner-height: calc(100vh - calc(2 * var(--content-gutter)));
   --fullpage-inner-width: calc(100vw - calc(2 * var(--content-gutter))- calc(2 * var(--border-width)));
   --footer-margin-top: 50px;
@@ -78,6 +79,15 @@ h2 {
   line-height: var(--line-height-normal);
   text-transform: uppercase;
   font-size: 7vmin;
+  font-family: Baton, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h3 {
+  margin: 0;
+  padding: 0;
+  line-height: var(--line-height-normal);
+  text-transform: uppercase;
+  font-size: max(var(--font-md-mobile), 4vmin);
   font-family: Baton, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -197,6 +207,23 @@ img {
   position: relative;
   transform: translateY(-50%);
 }
+
+/* main page specific css */
+
+.programm-grid {
+  padding: var(--inner-padding);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* justify-content: space-around; */
+  gap: var(--inner-padding);
+}
+
+.programm-grid>* {
+  max-width: 350px;
+}
+
+/* programm subpage-specific css */
 
 .portrait {
   min-height: 100%;
