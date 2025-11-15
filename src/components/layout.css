@@ -341,9 +341,10 @@ img {
 }
 
 .pencil {
+  /* transition: transform 50ms linear; */
   user-select: none;
   pointer-events: none;
-  position: absolute;
+  position: absolute !important;
   width: 100%;
   max-width: var(--pencil-max-width);
   margin-left: calc(50% - calc(0.5 * var(--pencil-max-width)));

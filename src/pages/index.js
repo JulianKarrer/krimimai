@@ -14,7 +14,7 @@ import LineBreak from "../components/linebreak"
 
 const slugify = require('slugify')
 
-function ProgrammPunkt({ style, className, programmpunkt, bg_colour }) {
+function ProgrammPunkt({ style, className, programmpunkt, bg_colour, k }) {
   const portraits = programmpunkt.portrait_list.map((img) => {
     return {
       img: getImage(img.portrait_obj.portrait_image),
@@ -24,15 +24,15 @@ function ProgrammPunkt({ style, className, programmpunkt, bg_colour }) {
 
   const linkto = "/programm/" + slugify(programmpunkt.name, { lower: true })
   return (
-    <div style={{ background: bg_colour, border: "var(--border)", ...style }} className={className}>
+    <div style={{ background: bg_colour, border: "var(--border)", ...style }} className={className} key={k}>
       {/* portraits */}
       <Link to={linkto}>
-        <div style={{ aspectRatio: 1 }}>
-          <div className="portraits-container">
+        <div style={{ aspectRatio: 1 }} >
+          <div className="portraits-container" >
             {portraits.map(({ img, name }, i) => <GatsbyImage
               image={img}
               alt={name}
-              key={name + i}
+              key={"portrait" + i}
               className="portrait"
             />)}
           </div>
@@ -104,7 +104,7 @@ const IndexPage = () => {
 
   const [trans, setTrans] = useState(`translate(0px, 0px)`);
   // const [pos, setPos] = useState({ x: 0, y: 0 });
-  const [interp, setInterp] = useState({ x: 0, y: 0 });
+  const [interp, setInterp] = useState({ x: 0, y: 0, rot: 0 });
   useAnimationFrame((delta) => {
     const elem = document.getElementById("tuete")
     const ysize = elem ? elem.clientHeight : 0
@@ -116,34 +116,17 @@ const IndexPage = () => {
 
     let x = 0;
     let y = -yoff * scroll_fract
+    let rot = scroll_fract
 
-    let a = 0.1
-    setInterp({ x: (1 - a) * interp.x + a * x, y: (1 - a) * interp.y + a * y })
-
-    console.log(scroll_fract)
+    let a = 0.9
+    const lerp = (f, t) => (1 - a) * f + a * t
+    setInterp({ x: lerp(x, interp.x), y: lerp(y, interp.y), rot: lerp(rot, interp.rot) })
   })
 
-  const onMove = (e) => { console.log("asdf") }
-
   useEffect(() => {
-    setTrans(`translate(${interp.x}px, ${interp.y}px)`)
+    setTrans(`translate(${interp.x}px, ${interp.y}px) rotate(${interp.rot}turn)`)
   }, [interp])
 
-  // useEffect(() => {
-  //   const updateAnim = () => {
-  //     const elem = document.getElementById("tuete")
-  //     const scroll_fract = Math.min(1, Math.max(0, window.scrollY / (elem.getBoundingClientRect().top + window.scrollY)))
-  //     const Yoff = elem ? elem.getBoundingClientRect().top + window.scrollY : 0
-
-  //     let x = 0;
-  //     let y = -Yoff * (1. - scroll_fract);
-
-  //     setAnim(`translate(${x}px, ${y}px)`);
-  //   }
-  //   window.addEventListener("scroll", updateAnim);
-  //   return () => window.removeEventListener("scroll", updateAnim);
-  // }, []);
-  // useEffect(() => { console.log(anim) }, [anim])
 
 
   return (<>
@@ -179,7 +162,7 @@ const IndexPage = () => {
           Folgende Tatorte sind geplant:
         </p>
         <div className="programm-grid">
-          {programmpunkte.map((punkt) => <ProgrammPunkt programmpunkt={punkt} bg_colour={bg_colour_subpage} />)}
+          {programmpunkte.map((punkt, k) => <ProgrammPunkt programmpunkt={punkt} bg_colour={bg_colour_subpage} k={k} />)}
         </div>
       </div>
 
