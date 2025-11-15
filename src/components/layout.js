@@ -39,7 +39,7 @@ const Layout = ({ children, style, bg_override }) => {
         <div style={{
           margin: "0 auto",
         }}>
-          <main>{children}</main>
+          <main style={{ position: "relative" }} id="main">{children}</main>
           <footer style={{ marginTop: "calc(2 * var(--content-gutter))" }}>
             <div className="footer-grid">
               <div className="footer-cell"><span>Pressematerial herunterladen</span></div>

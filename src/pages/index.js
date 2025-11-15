@@ -1,8 +1,10 @@
 import * as React from "react"
+import { useEffect, useState } from "react";
 import { useStaticQuery, graphql } from "gatsby"
 import { Link } from "gatsby"
-import { getImage, GatsbyImage } from "gatsby-plugin-image"
+import { getImage, GatsbyImage, StaticImage } from "gatsby-plugin-image"
 
+import useAnimationFrame from "../components/useAnimationFrame";
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Pfeil from "../images/arrows/pfeil_rechts.svg"
@@ -91,7 +93,6 @@ const IndexPage = () => {
   const { date, bg_colour_subpage, instagram_link_landing, kobr_link_landing,
     ueber_uns_text, ueber_uns_image, } = contentYaml
   const { nodes } = allMarkdownRemark
-  console.log(ueber_uns_text)
   const programmpunkte = nodes.map(({ frontmatter }) => (frontmatter))
     .sort((ia, ib) => {
       const a = ia.beginn
@@ -101,8 +102,52 @@ const IndexPage = () => {
       )
     })
 
-  return (
-    <Layout>
+  const [trans, setTrans] = useState(`translate(0px, 0px)`);
+  // const [pos, setPos] = useState({ x: 0, y: 0 });
+  const [interp, setInterp] = useState({ x: 0, y: 0 });
+  useAnimationFrame((delta) => {
+    const elem = document.getElementById("tuete")
+    const ysize = elem ? elem.clientHeight : 0
+
+    const margin = (ysize - window.innerHeight) / 2
+    const scroll_fract = elem ? Math.min(1, Math.max(0, 1. - window.scrollY / (elem.getBoundingClientRect().top + window.scrollY + margin))) : 0
+
+    const yoff = elem ? elem.getBoundingClientRect().top + window.scrollY + margin : 0
+
+    let x = 0;
+    let y = -yoff * scroll_fract
+
+    let a = 0.1
+    setInterp({ x: (1 - a) * interp.x + a * x, y: (1 - a) * interp.y + a * y })
+
+    console.log(scroll_fract)
+  })
+
+  const onMove = (e) => { console.log("asdf") }
+
+  useEffect(() => {
+    setTrans(`translate(${interp.x}px, ${interp.y}px)`)
+  }, [interp])
+
+  // useEffect(() => {
+  //   const updateAnim = () => {
+  //     const elem = document.getElementById("tuete")
+  //     const scroll_fract = Math.min(1, Math.max(0, window.scrollY / (elem.getBoundingClientRect().top + window.scrollY)))
+  //     const Yoff = elem ? elem.getBoundingClientRect().top + window.scrollY : 0
+
+  //     let x = 0;
+  //     let y = -Yoff * (1. - scroll_fract);
+
+  //     setAnim(`translate(${x}px, ${y}px)`);
+  //   }
+  //   window.addEventListener("scroll", updateAnim);
+  //   return () => window.removeEventListener("scroll", updateAnim);
+  // }, []);
+  // useEffect(() => { console.log(anim) }, [anim])
+
+
+  return (<>
+    <Layout style={{ overflowX: "hidden" }}>
       {/* full page header */}
       <div className="container">
         <h1 style={{
@@ -186,15 +231,30 @@ const IndexPage = () => {
         </a>
       </div>
 
+      {/* pencil */}
+      <StaticImage draggable={false} src="../images/bag/tuete-overlay.png" layout="constrained" style={{ zIndex: 4, pointerEvents: "none" }} className="pencil" alt="Beweistüte Beschriftung" />
+      <StaticImage draggable={false} id="tuete" src="../images/bag/tuete.png" layout="constrained" style={{ zIndex: 2, pointerEvents: "none" }} className="pencil" alt="Beweistüte" />
+
+      <div
+        onClick={() => { console.log("asdf") }}
+        className="pencil"
+        style={{ zIndex: 3, transform: trans }}>
+        <StaticImage
+          draggable={false}
+          src="../images/bag/stift.png"
+          layout="constrained"
+          alt="blutiger Stift"
+        />
+      </div>
+
+
+      <div style={{ height: "calc(1.4* var(--pencil-max-width))", position: "relative" }}></div>
+
     </Layout >
+  </>
   )
 }
 
-/**
- * Head export to define metadata for the page
- *
- * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
- */
-export const Head = () => <Seo title="Krimimai" />
 
+export const Head = () => <Seo title="Krimimai" />
 export default IndexPage
