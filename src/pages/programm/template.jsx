@@ -2,7 +2,7 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from "../../components/layout"
-
+import LineBreak from "../../components/linebreak"
 import Pfeil from "../../images/arrows/pfeil_tickets.svg"
 
 function ContentHeader({ header }) {
@@ -13,9 +13,7 @@ function ContentHeader({ header }) {
     </div>
   </> : <></>
 }
-function LineBreak({ text, style }) {
-  return <span style={{ maxWidth: "100%", whiteSpace: "pre-wrap", ...style }}>{text}</span>
-}
+
 
 export default function ProgrammpunktTemplate({ data }) {
   // destructure the data passed in from the query that generated the site:
@@ -105,8 +103,9 @@ export default function ProgrammpunktTemplate({ data }) {
         {/* ticket link */}
         <div className="padded right-half-border">
           <a className=" vcentre vcentred" target="_blank" rel="noopener noreferrer" href={ticketlink}>
-            <div className={"arrow-tickets"} ><Pfeil /></div>
-            <h1 style={{ padding: 0 }}>TICKETS</h1>
+            <h1 style={{ padding: 0, whiteSpace: "nowrap" }}>
+              <span className="arrow-container"><Pfeil /></span>TICKETS
+            </h1>
           </a>
         </div>
       </div>

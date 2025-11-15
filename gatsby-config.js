@@ -27,6 +27,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `settingsimg`,
+        path: `${__dirname}/content/settings`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `srcimages`,
         path: `${__dirname}/src/images`,
       },

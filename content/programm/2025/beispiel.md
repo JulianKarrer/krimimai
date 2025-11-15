@@ -1,13 +1,12 @@
 ---
 name: Beispiel Veranstaltung
 author: Beispiel Autor, Bei Speel Auror, Bleistift Amthor
-sorting: "1"
 ort: |-
   Große Beispielhalle
   Beispielstraße 37
   3. OG links
-einlass: 05.11.2025T21:15
-beginn: 05.11.2025T21:15
+einlass: 2025.11.15T16:36
+beginn: 2025.11.15T16:36
 price: "003.1415"
 ticketlink: https://example.org/
 portrait-list:

@@ -5,8 +5,10 @@ import { getImage, GatsbyImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import Pfeil from "../images/arrows/pfeil_rechts.svg"
 
 import * as styles from "./index.module.css"
+import LineBreak from "../components/linebreak"
 
 const slugify = require('slugify')
 
@@ -48,15 +50,22 @@ function ProgrammPunkt({ style, className, programmpunkt, bg_colour }) {
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
-    query IndexPageQuery {
+     query IndexPageQuery {
       contentYaml {
         date
         bg_colour_subpage
+        instagram_link_landing
+        kobr_link_landing
+        ueber_uns_text
+        ueber_uns_image{
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+        }
       }
       allMarkdownRemark {
         nodes {
           frontmatter {
-            sorting
             author
             beginn
             einlass
@@ -79,12 +88,14 @@ const IndexPage = () => {
     }
 `)
   const { contentYaml, allMarkdownRemark } = data
-  const { date, bg_colour_subpage } = contentYaml
+  const { date, bg_colour_subpage, instagram_link_landing, kobr_link_landing,
+    ueber_uns_text, ueber_uns_image, } = contentYaml
   const { nodes } = allMarkdownRemark
+  console.log(ueber_uns_text)
   const programmpunkte = nodes.map(({ frontmatter }) => (frontmatter))
     .sort((ia, ib) => {
-      const a = ia.sorting
-      const b = ib.sorting
+      const a = ia.beginn
+      const b = ib.beginn
       return a >= b ? 1 : (
         a <= b ? 0 : -1
       )
@@ -116,7 +127,7 @@ const IndexPage = () => {
       </div >
 
       {/* programm */}
-      <div className="bordered">
+      <div className="bordered" style={{ paddingBottom: "var(--inner-padding)" }}>
         <h1 style={{ borderBottom: "var(--border)" }}>Programm</h1>
         <p style={{ padding: "var(--inner-padding)" }}>
           Der mörderische Mai hat einiges zu bieten.<br />
@@ -127,8 +138,55 @@ const IndexPage = () => {
         </div>
       </div>
 
+      {/* instagram link */}
+      <div className="container vcentre" style={{ border: "none" }}>
+        <div className="bordered" style={{ width: "100%" }}>
 
-    </Layout>
+          <h1 style={{
+            lineHeight: "var(--line-height-medium-dense)"
+          }}>Aktuelle Infos<br />auf <a className="" target="_blank" rel="noopener noreferrer" href={instagram_link_landing} style={{
+            position: "relative",
+            color: "var(--color-text-highlight)",
+            whiteSpace: "nowrap",
+          }}>
+              <span className="arrow-container"><Pfeil /></span>INSTAGRAM
+            </a></h1>
+        </div>
+      </div>
+
+
+      {/* über uns */}
+      <div className="bordered">
+        <h1 style={{ textAlign: "right" }}>Über uns</h1>
+        <div className="padded halved-mobilefull"
+          style={{ borderTop: "var(--border)", gridGap: "10vmin" }}
+        >
+          <LineBreak text={ueber_uns_text} />
+          <div className="ueber-uns-image">
+            <GatsbyImage
+              image={getImage(ueber_uns_image)}
+              alt={"Portrait: Über uns"}
+              style={{
+                maxWidth: 500, display: "block",
+                marginLeft: "auto",
+                marginRight: "auto",
+              }}
+            // className="portrait"
+            />
+          </div>
+        </div>
+        <a className="" target="_blank" rel="noopener noreferrer" href={kobr_link_landing} style={{
+          position: "relative",
+          color: "var(--color-text-highlight)",
+          whiteSpace: "nowrap",
+        }}>
+          <h1 style={{ textAlign: "right", paddingTop: 0 }}>
+            <span className="arrow-container"><Pfeil /></span>KOBR.DE
+          </h1>
+        </a>
+      </div>
+
+    </Layout >
   )
 }
 
@@ -137,6 +195,6 @@ const IndexPage = () => {
  *
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
-export const Head = () => <Seo title="Home" />
+export const Head = () => <Seo title="Krimimai" />
 
 export default IndexPage

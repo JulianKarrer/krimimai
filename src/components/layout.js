@@ -6,11 +6,10 @@
  */
 
 import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-
+import { useStaticQuery, graphql, Link } from "gatsby"
 import "./layout.css"
 
-const Layout = ({ children, style }) => {
+const Layout = ({ children, style, bg_override }) => {
 
   const data = useStaticQuery(graphql`
     query BgColourQuery {
@@ -21,6 +20,7 @@ const Layout = ({ children, style }) => {
   `)
   const { contentYaml } = data
   const { bg_colour } = contentYaml
+  const bg = bg_override ? bg_override : bg_colour
 
   return (
     <>
@@ -30,7 +30,7 @@ const Layout = ({ children, style }) => {
         style={{
           margin: "0 auto",
           minHeight: "var(--min-height)",
-          background: bg_colour,
+          background: bg,
           padding: "var(--content-gutter)",
           ...style
         }}
@@ -42,14 +42,13 @@ const Layout = ({ children, style }) => {
           <main>{children}</main>
           <footer style={{ marginTop: "calc(2 * var(--content-gutter))" }}>
             <div className="footer-grid">
-              <div className="footer-cell"><span>Kontakt</span></div>
               <div className="footer-cell"><span>Pressematerial herunterladen</span></div>
-              <div className="footer-cell"><span>Impressum / Datenschutz</span></div>
+              <div className="footer-cell"><span><Link to={"/impressum"}>Impressum / Datenschutz</Link></span></div>
             </div>
 
             <div className="footer-grid footer-grid-15">
               <div className="footer-cell"><span>Partner</span></div>
-              <div className="footer-cell"><span>Pressematerial herunterladen</span></div>
+              <div className="footer-cell"><span>...</span></div>
             </div>
           </footer>
         </div >

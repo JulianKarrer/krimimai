@@ -4,9 +4,10 @@ backend:
   name: git-gateway
   branch: master
 
-media_folder: static/img
-public_folder: /img
+media_folder: content/settings
+public_folder: settings
 show_preview_links: false
+
 
 collections:
   - name: 'settings'
@@ -34,22 +35,58 @@ collections:
             label: 'Hintergrundfarbe der Unterseiten (Programmpunkte)', 
             widget: 'color' 
           }
+          - { 
+            name: 'bg-colour-impressum', 
+            label: 'Hintergrundfarbe des Impressums', 
+            widget: 'color' 
+          }
+          - { 
+            name: 'instagram-link-landing', 
+            label: 'Link zur Instagram-Seite', 
+            widget: 'string',
+            default: "https://www.instagram.com/krimimai/"
+          }
+          - { 
+            name: 'kobr-link-landing', 
+            label: 'Link zu Kobr.de', 
+            widget: 'string',
+          }
+          - label: "Portait 'Über Uns'"
+            name: "ueber-uns-image"
+            widget: "image"
+            hint: "Gerne Bilder in voller Auflösung hochladen, das Website-Backend übernimmt das Skalieren und die Optimierung für mobile Nutzer. Nur extrem große Bilder (mehr als 5-10MB) sind zu vermeiden. Bitte Dateinamen vor dem Upload bereinigen, z.B. also Leerzeichen und Sonderzeichen sowie Umlaute entfernen, um Probleme vorzubeugen."
+          - { 
+            name: 'ueber-uns-text', 
+            label: 'Text für "Über uns"', 
+            widget: 'text',
+          }
+          - { 
+            name: 'impressum-text', 
+            label: 'Text für das Impressum (zur Einfachheit ist Markdown zulässig, also Überschriften mit # zu kennzeichnen, ## und ### entsprechend Unterüberschriften, und man Links [mit diesen eckigen und runden Klammern](https://example.org) einfügt - siehe z.B. https://cmsstash.de/website-praxis/markdown-fur-webseiten)', 
+            widget: 'text',
+          }
+          - { 
+            name: 'datenschutz-text', 
+            label: 'Text zum Datenschutz (zur Einfachheit ist Markdown zulässig, also Überschriften mit # zu kennzeichnen, ## und ### entsprechend Unterüberschriften, und man Links [mit diesen eckigen und runden Klammern](https://example.org) einfügt - siehe z.B. https://cmsstash.de/website-praxis/markdown-fur-webseiten)', 
+            widget: 'text',
+          }
   - name: 'programm'
     label: 'Programmpunkte'
     folder: 'content/programm'
     path: '{{year}}/{{slug}}'
     create: true
     identifier_field: name
+    sortable_fields: ['einlass', 'beginn', 'name']
     preview:
       false
     fields:
     # mandatory fields first
     - {name: "name", label: "Veranstaltungsname", widget: "string", hint: "Was soll oben rechts angezeigt werden? Der Name sollte eindeutig sein, da er genutzt wird um die URL zu der Website dieses Programmpunktes zu generieren und sich daher nicht mit anderen Namen überschneiden sollte."}
     - {name: "author", label: "Untertitel / Autoren",widget: "string", hint: "Was soll unten links angezeigt werden?"}
-    - name: "sorting"
-      label: "Priorität"
-      required: true
-      hint: "Nach dieser Priorität werden Programmpunkte in der Übersicht sortiert. Es erfolgt eine lexikografische Sortierung, also Zeichen für Zeichen, wobei Ziffern wie üblich verglichen werden (0<1<2<3<...<9) und danach Buchstaben alphabetisch (9 < a < b < ...). Höhere Werte werden früher angezeigt, also 'z999' hat viel höhere Priorität als '1' oder 'b12'."
+    # - name: "sorting"
+    #   label: "Priorität"
+    #   required: true
+    #   hint: "Nach dieser Priorität werden Programmpunkte in der Übersicht sortiert. Es erfolgt eine lexikografische Sortierung, also Zeichen für Zeichen, wobei Ziffern wie üblich verglichen werden (0<1<2<3<...<9) und danach Buchstaben alphabetisch (9 < a < b < ...). Höhere Werte werden früher angezeigt, also 'z999' hat viel höhere Priorität als '1' oder 'b12'."
     - name: "ort"
       label: "Veranstaltungsort / Adresse"
       hint: "darf mehrere Zeilen lang sein um z.B. die ganze Adresse und den Raum zu beschreiben"
@@ -58,14 +95,12 @@ collections:
     - name: "einlass"
       label: "Einlass"
       widget: "datetime"
-      required: false
-      date_format: "DD.MM.YYYY"
+      date_format: "YYYY.MM.DD"
       time_format: "HH:mm"
     - name: "beginn"
       label: "Beginn"
       widget: "datetime"
-      required: false
-      date_format: "DD.MM.YYYY"
+      date_format: "YYYY.MM.DD"
       time_format: "HH:mm"
     - name: "price"
       label: "Preis"
