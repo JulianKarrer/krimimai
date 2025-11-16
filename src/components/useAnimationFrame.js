@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 
 export default function useAnimationFrame(
     callback,
+    depends,
     enabled = true
 ) {
     const callbackRef = useRef(callback);
@@ -9,7 +10,7 @@ export default function useAnimationFrame(
     const lastTimeRef = useRef(null);
     useEffect(() => {
         callbackRef.current = callback;
-    }, [callback]);
+    }, [callback, ...depends]);
     useEffect(() => {
         if (!enabled) return;
         const loop = (time) => {
@@ -26,5 +27,5 @@ export default function useAnimationFrame(
             if (frameRef.current) cancelAnimationFrame(frameRef.current);
             lastTimeRef.current = null;
         };
-    }, [enabled]);
+    }, [enabled, ...depends]);
 }

@@ -1,10 +1,12 @@
 import * as React from "react"
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useStaticQuery, graphql } from "gatsby"
 import { Link } from "gatsby"
 import { getImage, GatsbyImage, StaticImage } from "gatsby-plugin-image"
 
 import useAnimationFrame from "../components/useAnimationFrame";
+import useMousePosition from "../components/useMousePosition";
+import useNormalizedDrag from "../components/useNormalizedDrag";
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Pfeil from "../images/arrows/pfeil_rechts.svg"
@@ -102,10 +104,17 @@ const IndexPage = () => {
       )
     })
 
+  // get normalized mouse interaction
+
+  const mousePosition = useMousePosition(true);
+  const { mouseNorm, drag, down, accum, setAccum } = useNormalizedDrag(mousePosition);
+
+
   const [trans, setTrans] = useState(`translate(0px, 0px)`);
   // const [pos, setPos] = useState({ x: 0, y: 0 });
-  const [interp, setInterp] = useState({ x: 0, y: 0, rot: 0 });
+  const [interp, setInterp] = useState({ x: 0, y: 0, rot: 0, dx: 0, dy: 0 });
   useAnimationFrame((delta) => {
+    // get scroll position
     const elem = document.getElementById("tuete")
     const ysize = elem ? elem.clientHeight : 0
 
@@ -114,17 +123,28 @@ const IndexPage = () => {
 
     const yoff = elem ? elem.getBoundingClientRect().top + window.scrollY + margin : 0
 
-    let x = 0;
+    let dx = window.innerWidth * (drag.x + accum.x);
+    let dy = window.innerHeight * (drag.y + accum.y)
+    let x = 0
     let y = -yoff * scroll_fract
     let rot = scroll_fract
 
+    let stiffness = 0.05
+    setAccum(prev => { return { x: prev.x * (1 - stiffness), y: prev.y * (1 - stiffness) }; })
+
     let a = 0.9
     const lerp = (f, t) => (1 - a) * f + a * t
-    setInterp({ x: lerp(x, interp.x), y: lerp(y, interp.y), rot: lerp(rot, interp.rot) })
-  })
+    setInterp({
+      x: lerp(x, interp.x),
+      y: lerp(y, interp.y),
+      rot: lerp(rot, interp.rot),
+      dx: lerp(dx, interp.dx),
+      dy: lerp(dy, interp.dy),
+    })
+  }, [drag, accum])
 
   useEffect(() => {
-    setTrans(`translate(${interp.x}px, ${interp.y}px) rotate(${interp.rot}turn)`)
+    setTrans(`translate(${interp.x + interp.dx}px, ${interp.y + interp.dy}px) rotate(${interp.rot}turn)`)
   }, [interp])
 
 

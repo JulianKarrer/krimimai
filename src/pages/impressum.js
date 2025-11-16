@@ -20,7 +20,7 @@ const ImpressumPage = () => {
     console.log(data)
     return (
         <Layout bg_override={bg_colour_impressum}>
-            <div className="container-scaling">
+            <div className="container-scaling" style={{ userSelect: "auto" }}>
                 <h1>Impressum</h1>
                 <p style={{ padding: "var(--inner-padding)", paddingTop: 0, }}>
                     <LineBreak text={impressum_text} />

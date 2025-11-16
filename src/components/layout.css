@@ -119,6 +119,9 @@ img {
 }
 
 * {
+  /* FORBID USER SELECT EVERYWHERE */
+  user-select: none;
+
   box-sizing: border-box;
 }
 
