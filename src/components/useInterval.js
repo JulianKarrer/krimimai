@@ -1,6 +1,6 @@
 // https://www.geeksforgeeks.org/reactjs/reactjs-useinterval-custom-hook/
 
-import React, { useState, useEffect, useRef } from 'react';
+import  {  useEffect, useRef } from 'react';
 
 // creating the custom useInterval hook 
 export default function useInterval(callback, delay) {

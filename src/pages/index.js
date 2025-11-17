@@ -1,5 +1,5 @@
 import * as React from "react"
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { useStaticQuery, graphql } from "gatsby"
 import { Link } from "gatsby"
 import { getImage, GatsbyImage, StaticImage } from "gatsby-plugin-image"
@@ -10,6 +10,7 @@ import useNormalizedDrag from "../components/useNormalizedDrag";
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Pfeil from "../images/arrows/pfeil_rechts.svg"
+import Slider from "../components/slider";
 
 import * as styles from "./index.module.css"
 import LineBreak from "../components/linebreak"
@@ -31,13 +32,7 @@ function ProgrammPunkt({ style, className, programmpunkt, bg_colour, k }) {
       <Link to={linkto}  draggable={false}>
         <div style={{ aspectRatio: 1 }}>
           <div className="portraits-container">
-            {portraits.map(({ img, name }, i) => <GatsbyImage
-             draggable={false}
-              image={img}
-              alt={name}
-              key={"portrait" + i}
-              className="portrait"
-            />)}
+            <Slider portraits={portraits} interval={2500}/>
           </div>
         </div>
         {/* first box: name of the event */}
@@ -108,22 +103,40 @@ const IndexPage = () => {
   // get normalized mouse interaction
 
   const mousePosition = useMousePosition(true);
-  const { mouseNorm, drag, down, accum, setAccum } = useNormalizedDrag(mousePosition);
+  const { drag,  accum, setAccum } = useNormalizedDrag(mousePosition);
 
+  // also track if user has not scrolled for a while
+  const [lastScrollPos, setLastScrollPos] = useState(0);
+  const [lastScrollTime, setLastScrollTime] = useState(0);
+  const [inactive, setInactive] = useState(false);
+  const inactiveTimeout = 3
+
+  useEffect(()=>{console.log(inactive)}, [inactive])
 
   const [trans, setTrans] = useState(`translate(0px, 0px)`);
   // const [pos, setPos] = useState({ x: 0, y: 0 });
   const [interp, setInterp] = useState({ x: 0, y: 0, rot: 0, dx: 0, dy: 0 });
-  useAnimationFrame((delta) => {
+  useAnimationFrame((time) => {
+    const scrollY = window.scrollY
+    if (scrollY != lastScrollPos){
+      // new scroll detected, record its time and position
+      setLastScrollTime(time)
+      setLastScrollPos(scrollY)
+      setInactive(false)
+    } else if (time - lastScrollTime > inactiveTimeout) {
+      // no new 
+      setInactive(true)
+    }
+
     // get scroll position
     const elem = document.getElementById("tuete")
     const ysize = elem ? elem.clientHeight : 0
 
     const margin = (ysize - window.innerHeight) / 2
-    const height = elem ? (elem.getBoundingClientRect().top + window.scrollY + margin) : 0
-    const scroll_fract = elem ? Math.min(1, Math.max(0, 1. - window.scrollY / height)) : 0
+    const height = elem ? (elem.getBoundingClientRect().top + scrollY + margin) : 0
+    const scroll_fract = elem ? Math.min(1, Math.max(0, 1. - scrollY / height)) : 0
 
-    const yoff = elem ? elem.getBoundingClientRect().top + window.scrollY + margin : 0
+    const yoff = elem ? elem.getBoundingClientRect().top + scrollY + margin : 0
     const protectY = elem ? elem.clientHeight * 0.4 : 0
 
     let x = 0
@@ -175,6 +188,19 @@ const IndexPage = () => {
         }} className="tight">
           Allgäuer <br />Krimifestival
         </h1>
+        {/* scroll reminder arrow on inactivity: */}
+        <div style={{
+          position: "absolute", 
+          bottom: "calc(-1 * var(--content-gutter))", 
+          left:"50%", 
+          transition:"opacity 800ms ease",
+          opacity:  inactive ? 0.8 : 0,
+          zIndex: 4, 
+        }}
+        className="bob"
+        >
+          <StaticImage draggable={false} src="../images/arrows/pfeil_runter.svg" layout="constrained" style={{ pointerEvents: "none" }} alt="Pfeil nach unten" />
+        </div>
       </div >
 
       {/* programm */}
@@ -190,7 +216,7 @@ const IndexPage = () => {
       </div>
 
       {/* instagram link */}
-      <div className="container vcentre" style={{ border: "none" }}>
+      <div className="container vcentre mobile-halfpage-vert" style={{ border: "none" }}>
         <div className="bordered" style={{ width: "100%" }}>
 
           <h1 style={{
@@ -243,7 +269,6 @@ const IndexPage = () => {
       <StaticImage draggable={false} id="tuete" src="../images/bag/tuete.png" layout="constrained" style={{ zIndex: 2, pointerEvents: "none" }} className="pencil" alt="Beweistüte" />
 
       <div
-        onClick={() => { console.log("asdf") }}
         className="pencil"
         style={{ zIndex: 3, transform: trans }}>
         <StaticImage

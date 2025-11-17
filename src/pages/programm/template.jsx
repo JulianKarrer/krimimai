@@ -1,11 +1,10 @@
 import * as React from "react"
-import { useState } from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import useInterval from "../../components/useInterval"
 import Layout from "../../components/layout"
 import LineBreak from "../../components/linebreak"
 import Pfeil from "../../images/arrows/pfeil_tickets.svg"
+import Slider from "../../components/slider"
 
 function ContentHeader({ header }) {
   const valid_header = !(header === null || header === "" || header === undefined)
@@ -15,39 +14,6 @@ function ContentHeader({ header }) {
     </div>
   </> : <></>
 }
-
-function Slider({portraits, style}){
-
-  const [index, setIndex] = useState(0)
-
-  useInterval(()=>{
-     setIndex(idx => (idx+1) % portraits.length)
-  }, 3000)
-
-  return (
-  <div style={{
-    height: "100%",
-    minHeight: "100%",
-    width: "100%",
-    maxWidth: "100%",
-    overflow: "hidden",
-    position: "relative"
-  }}>
-    {portraits.map(({ img, name }, i) => <GatsbyImage
-      image={img}
-      alt={name}
-      key={"portrait" + name + i}
-      style={{
-        position: "absolute",
-        top: "0",
-        transition: "opacity 200ms linear",
-        opacity: i==index ? 1 : 0,
-        ...style}}
-      className="portrait"
-    />)}
-  </div>)
-}
-
 
 export default function ProgrammpunktTemplate({ data }) {
   // destructure the data passed in from the query that generated the site:
@@ -90,6 +56,7 @@ export default function ProgrammpunktTemplate({ data }) {
           position: "absolute",
           top: 0,
           right: 0,
+          marginLeft: "10vmin"
         }} className="tight">{name}</h1>
 
         <h1 style={{
@@ -100,6 +67,19 @@ export default function ProgrammpunktTemplate({ data }) {
         }} className="tight">
           {author}
         </h1>
+
+        <div style={{
+          width: "10vmin",
+          left:0,
+          top:0,
+          position: "absolute",
+          margin: "var(--inner-padding)",
+          transform: "rotate(0.5turn)",
+        }}>
+          <Link to={"/"}  draggable={false}>
+          <Pfeil />
+          </Link>
+        </div>
       </div>
 
       {/* event overview */}

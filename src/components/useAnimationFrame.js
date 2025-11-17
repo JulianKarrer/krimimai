@@ -7,25 +7,18 @@ export default function useAnimationFrame(
 ) {
     const callbackRef = useRef(callback);
     const frameRef = useRef();
-    const lastTimeRef = useRef(null);
     useEffect(() => {
         callbackRef.current = callback;
     }, [callback, ...depends]);
     useEffect(() => {
         if (!enabled) return;
         const loop = (time) => {
-            if (lastTimeRef.current == null) {
-                lastTimeRef.current = time;
-            }
-            const delta = time - lastTimeRef.current;
-            lastTimeRef.current = time;
-            callbackRef.current(delta);
+            callbackRef.current(time/1000);
             frameRef.current = requestAnimationFrame(loop);
         };
         frameRef.current = requestAnimationFrame(loop);
         return () => {
             if (frameRef.current) cancelAnimationFrame(frameRef.current);
-            lastTimeRef.current = null;
         };
     }, [enabled, ...depends]);
 }
