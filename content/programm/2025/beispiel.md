@@ -11,11 +11,14 @@ price: "003.1415"
 ticketlink: https://example.org/
 portrait-list:
   - portrait-obj:
-      portrait-image: kobr.png
-      portrait-name: Beispielian Kobrikus
+      portrait-image: car.jpg
+      portrait-name: Bastian Beispiel
   - portrait-obj:
       portrait-image: autorenbild_fixed.png
       portrait-name: Bei Speel
+  - portrait-obj:
+      portrait-image: desk.jpg
+      portrait-name: Beispielian Kobrikus
 contents:
   - segment:
       segment-title: Segment Überschrift

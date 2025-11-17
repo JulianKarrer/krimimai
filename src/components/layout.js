@@ -43,7 +43,7 @@ const Layout = ({ children, style, bg_override }) => {
           <footer style={{ marginTop: "calc(2 * var(--content-gutter))" }}>
             <div className="footer-grid">
               <div className="footer-cell"><span>Pressematerial herunterladen</span></div>
-              <div className="footer-cell"><span><Link to={"/impressum"}>Impressum / Datenschutz</Link></span></div>
+              <div className="footer-cell"><span><Link to={"/impressum"}  draggable={false}>Impressum / Datenschutz</Link></span></div>
             </div>
 
             <div className="footer-grid footer-grid-15">

@@ -1,6 +1,8 @@
 import * as React from "react"
+import { useState } from "react"
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import useInterval from "../../components/useInterval"
 import Layout from "../../components/layout"
 import LineBreak from "../../components/linebreak"
 import Pfeil from "../../images/arrows/pfeil_tickets.svg"
@@ -12,6 +14,38 @@ function ContentHeader({ header }) {
       <h1>{header}</h1>
     </div>
   </> : <></>
+}
+
+function Slider({portraits, style}){
+
+  const [index, setIndex] = useState(0)
+
+  useInterval(()=>{
+     setIndex(idx => (idx+1) % portraits.length)
+  }, 3000)
+
+  return (
+  <div style={{
+    height: "100%",
+    minHeight: "100%",
+    width: "100%",
+    maxWidth: "100%",
+    overflow: "hidden",
+    position: "relative"
+  }}>
+    {portraits.map(({ img, name }, i) => <GatsbyImage
+      image={img}
+      alt={name}
+      key={"portrait" + name + i}
+      style={{
+        position: "absolute",
+        top: "0",
+        transition: "opacity 200ms linear",
+        opacity: i==index ? 1 : 0,
+        ...style}}
+      className="portrait"
+    />)}
+  </div>)
 }
 
 
@@ -49,14 +83,7 @@ export default function ProgrammpunktTemplate({ data }) {
       {/* first container: title, name and background image */}
       <div className="container" style={{ marginBottom: 0 }}>
         {/* include portraits */}
-        <div className="portraits-container">
-          {portraits.map(({ img, name }, i) => <GatsbyImage
-            image={img}
-            alt={name}
-            key={name + i}
-            className="portrait"
-          />)}
-        </div>
+        <Slider portraits={portraits} />
         {/* include headings */}
         <h1 style={{
           textAlign: "right",

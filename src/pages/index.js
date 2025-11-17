@@ -28,10 +28,11 @@ function ProgrammPunkt({ style, className, programmpunkt, bg_colour, k }) {
   return (
     <div style={{ background: bg_colour, border: "var(--border)", ...style }} className={className} key={k}>
       {/* portraits */}
-      <Link to={linkto}>
-        <div style={{ aspectRatio: 1 }} >
-          <div className="portraits-container" >
+      <Link to={linkto}  draggable={false}>
+        <div style={{ aspectRatio: 1 }}>
+          <div className="portraits-container">
             {portraits.map(({ img, name }, i) => <GatsbyImage
+             draggable={false}
               image={img}
               alt={name}
               key={"portrait" + i}
@@ -119,14 +120,16 @@ const IndexPage = () => {
     const ysize = elem ? elem.clientHeight : 0
 
     const margin = (ysize - window.innerHeight) / 2
-    const scroll_fract = elem ? Math.min(1, Math.max(0, 1. - window.scrollY / (elem.getBoundingClientRect().top + window.scrollY + margin))) : 0
+    const height = elem ? (elem.getBoundingClientRect().top + window.scrollY + margin) : 0
+    const scroll_fract = elem ? Math.min(1, Math.max(0, 1. - window.scrollY / height)) : 0
 
     const yoff = elem ? elem.getBoundingClientRect().top + window.scrollY + margin : 0
+    const protectY = elem ? elem.clientHeight * 0.4 : 0
 
-    let dx = window.innerWidth * (drag.x + accum.x);
-    let dy = window.innerHeight * (drag.y + accum.y)
     let x = 0
     let y = -yoff * scroll_fract
+    let dy = window.innerHeight * (drag.y + accum.y)
+    let dx = window.innerWidth * (drag.x + accum.x) * (-(y + dy) < (protectY) ? 0.1 : 1);
     let rot = scroll_fract
 
     let stiffness = 0.05
@@ -144,7 +147,7 @@ const IndexPage = () => {
   }, [drag, accum])
 
   useEffect(() => {
-    setTrans(`translate(${interp.x + interp.dx}px, ${interp.y + interp.dy}px) rotate(${interp.rot}turn)`)
+    setTrans(`translate(${interp.x + interp.dx}px, ${Math.min(0, interp.y + interp.dy)}px) rotate(${interp.rot}turn)`)
   }, [interp])
 
 
@@ -192,7 +195,7 @@ const IndexPage = () => {
 
           <h1 style={{
             lineHeight: "var(--line-height-medium-dense)"
-          }}>Aktuelle Infos<br />auf <a className="" target="_blank" rel="noopener noreferrer" href={instagram_link_landing} style={{
+          }}>Aktuelle Infos<br />auf <a className="" target="_blank" rel="noopener noreferrer" href={instagram_link_landing}  draggable={false} style={{
             position: "relative",
             color: "var(--color-text-highlight)",
             whiteSpace: "nowrap",
@@ -212,6 +215,7 @@ const IndexPage = () => {
           <LineBreak text={ueber_uns_text} />
           <div className="ueber-uns-image">
             <GatsbyImage
+             draggable={false}
               image={getImage(ueber_uns_image)}
               alt={"Portrait: Über uns"}
               style={{
@@ -227,7 +231,7 @@ const IndexPage = () => {
           position: "relative",
           color: "var(--color-text-highlight)",
           whiteSpace: "nowrap",
-        }}>
+        }}  draggable={false}>
           <h1 style={{ textAlign: "right", paddingTop: 0 }}>
             <span className="arrow-container"><Pfeil /></span>KOBR.DE
           </h1>

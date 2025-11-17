@@ -12,7 +12,7 @@ const NotFoundPage = () => (
       <div style={{ padding: "var(--inner-padding)" }}>
         <p>
           <span>Diese Seite wurde leider ermordet. </span>
-          <Link to="/">Klicken Sie hier um auf der Hauptseite zu ermitteln.</Link>
+          <Link to="/" draggable={false}>Klicken Sie hier um auf der Hauptseite zu ermitteln.</Link>
         </p>
       </div>
 
