@@ -121,12 +121,12 @@ img {
 * {
   /* FORBID USER SELECT EVERYWHERE */
   /* user-drag: none;*/
-  -webkit-user-drag: none; 
+  -webkit-user-drag: none;
   user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
-  
+
   box-sizing: border-box;
 }
 
@@ -360,18 +360,36 @@ img {
   /* transform: translate3d(-50%, 0, 0); */
 }
 
-/* .pencil-container {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+.partner-container {
   display: flex;
+  align-items: center;
   justify-content: center;
+
+  max-width: 100%;
+  flex-direction: row;
+  overflow: hidden;
+  flex-wrap: wrap;
 }
 
-.pencil-container>* {
-  position: absolute;
-  max-width: var(--pencil-max-width);
-} */
+.partner-tile {
+  --partner-minsize: 120px;
+  --partner-size: 200px;
+  min-width: var(--partner-minsize);
+  width: var(--partner-size);
+  max-width: var(--partner-size);
+  min-height: var(--partner-minsize);
+  height: var(--partner-size);
+  max-height: var(--partner-size);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--border);
+  border-radius: calc(0.1 * var(--partner-size));
+  margin: 10px;
+  padding: 10px;
+}
+
 
 @media (max-width: 125vh) {
 
@@ -394,9 +412,21 @@ img {
 
 }
 
+.footer-cell-sm-nolborder {
+  border-left: none;
+}
+
 @media (max-width: 75vh) {
-  .mobile-halfpage-vert{
-    height: calc( 0.5 * var(--fullpage-inner-height));
+  .footer-cell-sm-nolborder {
+    border-left: var(--border);
+  }
+
+  .partner-tile {
+    --partner-size: calc(50vw - calc(2 * var(--inner-padding)) - calc(2 * var(--content-gutter)));
+  }
+
+  .mobile-halfpage-vert {
+    height: calc(0.5 * var(--fullpage-inner-height));
   }
 
   .content-img-container>* {
@@ -434,13 +464,20 @@ img {
 
 /* animation */
 
-.bob{
+.bob {
   animation: bob 2.5s ease-in-out infinite;
 }
 
 @keyframes bob {
-  0%   { transform: translateX(-50%) translateY(50%); }
-  50%  { transform: translateX(-50%) translateY(-50%); }
-  100% { transform: translateX(-50%) translateY(50%); }
-}
+  0% {
+    transform: translateX(-50%) translateY(50%);
+  }
 
+  50% {
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(50%);
+  }
+}

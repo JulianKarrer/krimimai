@@ -60,6 +60,31 @@ collections:
             label: 'Text für "Über uns"', 
             widget: 'text',
           }
+          - label: "Partner Liste"
+            hint: "Hier wird die Liste der Partner mit Logos für den Footer auf allen Seiten generiert. SVG DATEIEN WERDEN NICHT ANGEZEIGT! Bitte JPEG, PNG oder ähnliche Bitmap-Formate verwenden."
+            name: "partner-list"
+            widget: "list"
+            allow_add: true
+            allow_reorder: true
+            allow_remove: true
+            label_singular: "Partner"
+            add_to_top: true
+            collapsed: false
+            field: 
+              label: Partner
+              name: partner-obj
+              widget: object
+              fields: 
+                - label: "Logo"
+                  name: "partner-image"
+                  widget: "image"
+                  hint: "Gerne Bilder in voller Auflösung hochladen, das Website-Backend übernimmt das Skalieren und die Optimierung für mobile Nutzer. Nur extrem große Bilder (mehr als 5-10MB) sind zu vermeiden. Bitte Dateinamen vor dem Upload bereinigen, z.B. also Leerzeichen und Sonderzeichen sowie Umlaute entfernen, um Probleme vorzubeugen."
+                - label: "Name"
+                  name: "partner-name"
+                  widget: "string"
+                - label: "Link"
+                  name: "partner-link"
+                  widget: "string"
           - { 
             name: 'impressum-text', 
             label: 'Text für das Impressum (zur Einfachheit ist Markdown zulässig, also Überschriften mit # zu kennzeichnen, ## und ### entsprechend Unterüberschriften, und man Links [mit diesen eckigen und runden Klammern](https://example.org) einfügt - siehe z.B. https://cmsstash.de/website-praxis/markdown-fur-webseiten)', 

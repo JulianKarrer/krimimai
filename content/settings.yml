@@ -17,6 +17,35 @@ ueber-uns-text: "Michael und Silke Kobr sind seit langem ein eingespieltes Team
   und ihrer tiefen Verbundenheit zur Region wollen sie ein einzigartiges Event
   schaffen, das Krimifans aus nah und fern begeistern und das Allgäu als
   Krimiregion noch bekannter machen soll."
+partner-list:
+  - partner-obj:
+      partner-link: https://www.moebel-wassermann.de/
+      partner-name: Möbel Wassermann
+      partner-image: settings/wassermann.png
+  - partner-obj:
+      partner-image: settings/schwarzekatze.png
+      partner-name: Schwarze Katze
+      partner-link: https://www.katz-mm.de/
+  - partner-obj:
+      partner-image: settings/reisacher.png
+      partner-name: Reisacher
+      partner-link: https://www.reisacher.de/
+  - partner-obj:
+      partner-image: settings/osiander.png
+      partner-name: Osiander
+      partner-link: https://www.osiander.de/
+  - partner-obj:
+      partner-image: settings/foerg.png
+      partner-name: Förg Musikhaus
+      partner-link: https://www.musikhaus-foerg.de/
+  - partner-obj:
+      partner-image: settings/allgau.png
+      partner-name: Allgäu
+      partner-link: https://www.allgaeu.de/
+  - partner-obj:
+      partner-image: settings/mm.png
+      partner-name: Stadt Memmingen
+      partner-link: https://www.memmingen.de/
 impressum-text: >
   Für den Inhalt dieser Seiten ist verantwortlich:
 

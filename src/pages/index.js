@@ -29,10 +29,10 @@ function ProgrammPunkt({ style, className, programmpunkt, bg_colour, k }) {
   return (
     <div style={{ background: bg_colour, border: "var(--border)", ...style }} className={className} key={k}>
       {/* portraits */}
-      <Link to={linkto}  draggable={false}>
+      <Link to={linkto} draggable={false}>
         <div style={{ aspectRatio: 1 }}>
           <div className="portraits-container">
-            <Slider portraits={portraits} interval={2500}/>
+            <Slider portraits={portraits} interval={2500} />
           </div>
         </div>
         {/* first box: name of the event */}
@@ -103,7 +103,7 @@ const IndexPage = () => {
   // get normalized mouse interaction
 
   const mousePosition = useMousePosition(true);
-  const { drag,  accum, setAccum } = useNormalizedDrag(mousePosition);
+  const { drag, accum, setAccum } = useNormalizedDrag(mousePosition);
 
   // also track if user has not scrolled for a while
   const [lastScrollPos, setLastScrollPos] = useState(0);
@@ -111,14 +111,12 @@ const IndexPage = () => {
   const [inactive, setInactive] = useState(false);
   const inactiveTimeout = 3
 
-  useEffect(()=>{console.log(inactive)}, [inactive])
-
   const [trans, setTrans] = useState(`translate(0px, 0px)`);
   // const [pos, setPos] = useState({ x: 0, y: 0 });
   const [interp, setInterp] = useState({ x: 0, y: 0, rot: 0, dx: 0, dy: 0 });
   useAnimationFrame((time) => {
     const scrollY = window.scrollY
-    if (scrollY != lastScrollPos){
+    if (scrollY !== lastScrollPos) {
       // new scroll detected, record its time and position
       setLastScrollTime(time)
       setLastScrollPos(scrollY)
@@ -190,14 +188,14 @@ const IndexPage = () => {
         </h1>
         {/* scroll reminder arrow on inactivity: */}
         <div style={{
-          position: "absolute", 
-          bottom: "calc(-1 * var(--content-gutter))", 
-          left:"50%", 
-          transition:"opacity 800ms ease",
-          opacity:  inactive ? 0.8 : 0,
-          zIndex: 4, 
+          position: "absolute",
+          bottom: "calc(-1 * var(--content-gutter))",
+          left: "50%",
+          transition: "opacity 800ms ease",
+          opacity: inactive ? 0.8 : 0,
+          zIndex: 4,
         }}
-        className="bob"
+          className="bob"
         >
           <StaticImage draggable={false} src="../images/arrows/pfeil_runter.svg" layout="constrained" style={{ pointerEvents: "none" }} alt="Pfeil nach unten" />
         </div>
@@ -221,7 +219,7 @@ const IndexPage = () => {
 
           <h1 style={{
             lineHeight: "var(--line-height-medium-dense)"
-          }}>Aktuelle Infos<br />auf <a className="" target="_blank" rel="noopener noreferrer" href={instagram_link_landing}  draggable={false} style={{
+          }}>Aktuelle Infos<br />auf <a className="" target="_blank" rel="noopener noreferrer" href={instagram_link_landing} draggable={false} style={{
             position: "relative",
             color: "var(--color-text-highlight)",
             whiteSpace: "nowrap",
@@ -241,7 +239,7 @@ const IndexPage = () => {
           <LineBreak text={ueber_uns_text} />
           <div className="ueber-uns-image">
             <GatsbyImage
-             draggable={false}
+              draggable={false}
               image={getImage(ueber_uns_image)}
               alt={"Portrait: Über uns"}
               style={{
@@ -257,7 +255,7 @@ const IndexPage = () => {
           position: "relative",
           color: "var(--color-text-highlight)",
           whiteSpace: "nowrap",
-        }}  draggable={false}>
+        }} draggable={false}>
           <h1 style={{ textAlign: "right", paddingTop: 0 }}>
             <span className="arrow-container"><Pfeil /></span>KOBR.DE
           </h1>
