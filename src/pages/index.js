@@ -69,6 +69,7 @@ const IndexPage = () => {
             author
             beginn
             einlass
+            disable
             name
             title
             ticketlink
@@ -98,7 +99,7 @@ const IndexPage = () => {
       return a >= b ? 1 : (
         a <= b ? 0 : -1
       )
-    })
+    }).filter((elem) => { return !(elem?.disable) })
 
   // get normalized mouse interaction
 

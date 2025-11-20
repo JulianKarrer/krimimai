@@ -43,6 +43,8 @@ export default function ProgrammpunktTemplate({ data }) {
   const isnt = (val) => val === null || val === undefined || val === ""
   const has_einlass = !isnt(frontmatter?.einlass)
   const has_beginn = !isnt(frontmatter?.beginn)
+  const has_remark = !isnt(frontmatter?.start_remark)
+  console.log(frontmatter, has_einlass, has_beginn, has_remark)
 
   return (
     <Layout style={{ background: bg_colour_subpage }}>
@@ -70,14 +72,14 @@ export default function ProgrammpunktTemplate({ data }) {
 
         <div style={{
           width: "10vmin",
-          left:0,
-          top:0,
+          left: 0,
+          top: 0,
           position: "absolute",
           margin: "var(--inner-padding)",
           transform: "rotate(0.5turn)",
         }}>
-          <Link to={"/"}  draggable={false}>
-          <Pfeil />
+          <Link to={"/"} draggable={false}>
+            <Pfeil />
           </Link>
         </div>
       </div>
@@ -86,10 +88,14 @@ export default function ProgrammpunktTemplate({ data }) {
       <div className="bordered halved-mobilefull" style={{ marginTop: 0, borderTop: 0 }}>
         <div className="padded">
           {/* conditionally render einlass and begin fields, their seperator and a linebreak */}
-          {has_einlass ? <>{frontmatter.einlass.split("T").at(-1)} Einlass</> : <></>}
+          {has_einlass ? <>{frontmatter?.einlass.split("T").at(-1)} Einlass</> : <></>}
           {has_einlass && has_beginn ? <> / </> : <></>}
-          {has_beginn ? <>{frontmatter.beginn.split("T").at(-1)} Beginn</> : <></>}
-          {has_einlass || has_beginn ? <br /> : <></>}
+          {has_beginn ?
+            (frontmatter?.beginn_ignore ? <></> :
+              <>{frontmatter?.beginn.split("T").at(-1)} Beginn</>) :
+            <></>}
+          {has_einlass || (has_beginn && (!(frontmatter?.beginn_ignore))) ? <br /> : <></>}
+          {has_remark && <><LineBreak text={frontmatter?.start_remark} /> <br /> </>}
           {/* always print field ort */}
           <LineBreak text={ort} />
           {/* conditionally linebreak and render price, rounding to 2 decimal places if not an integer */}
@@ -150,6 +156,8 @@ export const query = graphql`
       frontmatter {
         author
         beginn
+        beginn_ignore
+        start_remark
         einlass
         name
         ort

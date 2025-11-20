@@ -106,6 +106,11 @@ collections:
       false
     fields:
     # mandatory fields first
+    - name: "disable"
+      label: "Diesen Eintrag ausblenden"
+      hint: "nützlich um z.B. die Beispielveranstaltung auszublenden"
+      widget: "boolean"
+      default: false
     - {name: "name", label: "Veranstaltungsname", widget: "string", hint: "Was soll oben rechts angezeigt werden? Der Name sollte eindeutig sein, da er genutzt wird um die URL zu der Website dieses Programmpunktes zu generieren und sich daher nicht mit anderen Namen überschneiden sollte."}
     - {name: "author", label: "Untertitel / Autoren",widget: "string", hint: "Was soll unten links angezeigt werden?"}
     # - name: "sorting"
@@ -118,15 +123,24 @@ collections:
       widget: "text"
     # now non-required fields with single entries
     - name: "einlass"
-      label: "Einlass"
+      label: "Einlass (kein Pflichtfeld, darf leer gelassen werden)"
       widget: "datetime"
       date_format: "YYYY.MM.DD"
       time_format: "HH:mm"
+      required: false
     - name: "beginn"
-      label: "Beginn"
+      label: "Beginn (hiernach wird Übersicht sortiert)"
       widget: "datetime"
       date_format: "YYYY.MM.DD"
       time_format: "HH:mm"
+    - name: "beginn-ignore"
+      label: "Beginn nicht anzeigen sondern ignorieren?"
+      widget: "boolean"
+      default: false
+    - name: "start-remark"
+      label: "Freitext / Bemerkung zu Start/Einlass/Dauer (wird darunter angezeigt, darf leer bleiben)"
+      widget: "text"
+      required: false
     - name: "price"
       label: "Preis"
       hint: "Zahl in Euro, darf eine Kommazahl sein (getrennt mit . und nicht , also z.B. 10.50), wird wenn nötig auf den nächsten Cent gerundet"

@@ -1,21 +1,32 @@
 ---
-name: True Crime Meets Fiction
+disable: false
+name: True crime & fiction
 author: Peter Probst
 ort: |-
-  Landgericht Memmingen, Hallhof 1, MM
+  Landgericht Memmingen, Hallhof 1, MM 
   Schwurgerichtssaal 132
-einlass: 2025.11.15T16:29
-beginn: 2025.11.15T16:29
-price: ""
+einlass: 2026.05.08T18:30
+beginn: 2026.05.08T19:00
+beginn-ignore: false
+price: "20"
 portrait-list:
   - portrait-obj:
-      portrait-image: autorenbild.png
+      portrait-image: autorenbild_fixed.png
       portrait-name: Peter Probst
 contents:
   - segment:
       segment-contents:
         - type: block-text-obj
-          block-text: Sein neuestes Buch wurde von einem unaufgeklärten Fall inspiriert.
+          block-text: "**Peter Probst**, *in München geboren, ist Drehbuch- und
+            Romanautor, ausgezeichnet u. a. mit dem Grimme-Preis. Neben
+            Kriminalromanen (dtv) schrieb er mit seiner Frau Amelie Fried eine
+            Kinderkrimi-Reihe und zuletzt den autofiktionalen Roman “Ich habe
+            Schleyer nicht entführt”.*"
+        - type: block-image-obj
+          block-image: bild_veranstaltung.png
+        - type: block-text-obj
+          block-text: >-
+            Sein neuestes Buch wurde von einem unaufgeklärten Fall inspiriert.
             Die junge Journalistin Toni will ihre Vergangenheit hinter sich
             lassen, doch ein Anruf über ihren kranken Vater führt sie zurück
             nach Pirmasens. Noch auf dem Weg dorthin stirbt er. In seinem Haus
@@ -30,4 +41,7 @@ contents:
             Amelie Fried eine Kinderkrimi-Reihe und zuletzt den autofiktionalen
             Roman “Ich habe Schleyer nicht entführt”. Sein neuestes Buch wurde
             von einem unaufgeklärten Fall inspiriert.
+
+
+            *Foto Peter Probst: Dominik Rössler Verlagsgruppe PRH*
 ---
