@@ -7,6 +7,7 @@ einlass: 2026.05.10T18:00
 beginn: 2026.05.10T19:00
 beginn-ignore: false
 price: "20"
+ticketlink: https://krimimai.reservix.de/tickets-crime-dine-in-memmingen-schwarze-katz-am-10-5-2026/e2475071
 portrait-list:
   - portrait-obj:
       portrait-image: thumbnail_mp-oliver-topf_3.jpg

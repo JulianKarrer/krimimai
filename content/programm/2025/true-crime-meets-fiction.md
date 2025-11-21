@@ -9,6 +9,7 @@ einlass: 2026.05.08T18:30
 beginn: 2026.05.08T19:00
 beginn-ignore: false
 price: "20"
+ticketlink: https://krimimai.reservix.de/tickets-true-crime-fiction-in-memmingen-landgericht-memmingen-schwurgerichtssaal-132-am-8-5-2026/e2475076
 portrait-list:
   - portrait-obj:
       portrait-image: autorenbild_fixed.png

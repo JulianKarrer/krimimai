@@ -7,6 +7,7 @@ einlass: 2026.05.11T19:00
 beginn: 2026.05.11T19:30
 beginn-ignore: false
 price: "22"
+ticketlink: https://krimimai.reservix.de/tickets-crime-wine-in-memmingen-mini-autohaus-reisacher-am-11-5-2026/e2478909
 portrait-list:
   - portrait-obj:
       portrait-image: pressebild_martinwalker_cfoto-klaus-maria-einwanger-diogenes-verlag_72dpi.jpg

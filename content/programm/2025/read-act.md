@@ -7,6 +7,7 @@ einlass: 2026.05.12T19:00
 beginn: 2026.05.12T19:30
 beginn-ignore: false
 price: "20"
+ticketlink: https://krimimai.reservix.de/tickets-read-act-in-memmingen-antoniersaal-am-12-5-2026/e2478903
 portrait-list:
   - portrait-obj:
       portrait-image: klüpfel-c-sonja-herpich.jpg

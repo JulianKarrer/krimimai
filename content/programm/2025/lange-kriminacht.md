@@ -7,6 +7,7 @@ einlass: 2026.05.09T18:30
 beginn: 2026.05.09T19:30
 beginn-ignore: false
 price: "29"
+ticketlink: https://krimimai.reservix.de/tickets-lange-kriminacht-in-memmingen-rex-palast-am-9-5-2026/e2475077
 portrait-list:
   - portrait-obj:
       portrait-image: az-schissler-freddy033.jpg

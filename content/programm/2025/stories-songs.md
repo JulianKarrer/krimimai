@@ -7,6 +7,7 @@ einlass: 2026.05.13T19:00
 beginn: 2026.05.13T20:00
 beginn-ignore: false
 price: "29"
+ticketlink: https://krimimai.reservix.de/tickets-stories-songs-in-memmingen-rex-palast-am-13-5-2026/e2486823
 portrait-list:
   - portrait-obj:
       portrait-image: b0012977_re01_preview_web.jpg

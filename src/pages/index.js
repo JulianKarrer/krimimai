@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useStaticQuery, graphql } from "gatsby"
 import { Link } from "gatsby"
 import { getImage, GatsbyImage, StaticImage } from "gatsby-plugin-image"
+import PfeilTicket from "../images/arrows/pfeil_tickets.svg"
 
 import useAnimationFrame from "../components/useAnimationFrame";
 import useMousePosition from "../components/useMousePosition";
@@ -25,9 +26,22 @@ function ProgrammPunkt({ style, className, programmpunkt, bg_colour, k }) {
     }
   })
 
+  const monthnames = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"]
+  const date_ger_locale = (datestr) => {
+    try {
+      const month = datestr.split(".")[1]
+      const day = datestr.split(".")[2].split("T")[0]
+      const time = datestr.split(".")[2].split("T")[1]
+      const monthword = monthnames[parseInt(month) - 1]
+      return `${day}. ${monthword} ${time}`
+    } catch (e) {
+      return ""
+    }
+  }
+
   const linkto = "/programm/" + slugify(programmpunkt.name, { lower: true })
   return (
-    <div style={{ background: bg_colour, border: "var(--border)", ...style }} className={className} key={k}>
+    <div style={{ background: bg_colour, position: "relative", border: "var(--border)", ...style }} className={className} key={k}>
       {/* portraits */}
       <Link to={linkto} draggable={false}>
         <div style={{ aspectRatio: 1 }}>
@@ -37,12 +51,26 @@ function ProgrammPunkt({ style, className, programmpunkt, bg_colour, k }) {
         </div>
         {/* first box: name of the event */}
         <div style={{ borderTop: "var(--border)", padding: "var(--small-padding)" }}>
-          <h3>{programmpunkt.name}</h3>
+          <h3 style={{ lineHeight: "1.0" }}>{programmpunkt.name}</h3>
         </div>
       </Link>
       {/* second box: all the remaining info */}
-      <div style={{ borderTop: "var(--border)", padding: "var(--small-padding)" }}>
-        <span style={{ marginBottom: "50px" }}>{programmpunkt.author}</span>
+      <div style={{ borderTop: "var(--border)", padding: "var(--small-padding)", marginBottom: "calc(30px + 10pt)" }}>
+        <span >{programmpunkt.author}</span>
+        <p style={{ fontSize: "10pt", marginTop: "20px", position: "absolute", bottom: "10px" }}>{!programmpunkt.beginn_ignore && date_ger_locale(programmpunkt.beginn)}</p>
+        {programmpunkt?.ticketlink &&
+          <div
+            style={{ bottom: "0", position: "absolute", right: "var(--small-padding)" }}>
+            <a className="vcentre vcentred" target="_blank" rel="noopener noreferrer"
+              href={programmpunkt.ticketlink}>
+              <span style={{ padding: 0, whiteSpace: "nowrap" }}>
+                <span style={{
+                  display: "inline-block", aspectRatio: 2, height: "calc(0.75 * var(--textfont-size))", marginRight: "5px"
+                }}><PfeilTicket /></span>TICKETS
+              </span>
+            </a>
+          </div>
+        }
       </div>
     </div >
   )
@@ -68,6 +96,7 @@ const IndexPage = () => {
           frontmatter {
             author
             beginn
+            beginn_ignore
             einlass
             disable
             name
