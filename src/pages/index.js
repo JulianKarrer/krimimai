@@ -12,6 +12,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Pfeil from "../images/arrows/pfeil_rechts.svg"
 import Slider from "../components/slider";
+import date_ger_locale from "../components/date_ger_locale";
 
 import * as styles from "./index.module.css"
 import LineBreak from "../components/linebreak"
@@ -26,18 +27,6 @@ function ProgrammPunkt({ style, className, programmpunkt, bg_colour, k }) {
     }
   })
 
-  const monthnames = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"]
-  const date_ger_locale = (datestr) => {
-    try {
-      const month = datestr.split(".")[1]
-      const day = datestr.split(".")[2].split("T")[0]
-      const time = datestr.split(".")[2].split("T")[1]
-      const monthword = monthnames[parseInt(month) - 1]
-      return `${day}. ${monthword} ${time}`
-    } catch (e) {
-      return ""
-    }
-  }
 
   const linkto = "/programm/" + slugify(programmpunkt.name, { lower: true })
   return (

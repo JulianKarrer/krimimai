@@ -36,18 +36,13 @@ contents:
           block-image: 9783423221221.jpg
         - type: block-text-obj
           block-text: >-
-            **Freddy Schissler** *ist Journalist, Autor und außerdem ein
-            begnadeter Pianist. Die lange Kriminacht begleitet der langjährige
-            Redakteur der Allgäuer Zeitung Freddy Schissler mit kriminell guten
-            Melodien am Klavier.*
+            **Fabio Nola** *ist das Pseudonym eines deutschen Historikers. Sein
+            Studium in Neapel und das Leben im lebendigen Centro Storico
+            inspirierten ihn zu seiner Krimireihe um den feinfühligen
+            Commissario Salvatore Gaetano.*
 
 
-            **Fabio Nola** *ist das Pseudonym eines deutschen Historikers. Sein Studium in Neapel und das Leben im lebendigen Centro Storico inspirierten ihn zu seiner Krimireihe um den feinfühligen Commissario Salvatore Gaetano.*
-
-
-            *Foto Fabio Nola: Natalie Schulda
-
-            Foto Freddy Schissler: Ralf Lienert*
+            *Foto Fabio Nola: Natalie Schulda*
   - segment:
       segment-title: "Der Wolf im dunklen Wald "
       segment-contents:
@@ -101,4 +96,15 @@ contents:
             Kleingartensiedlung Wurzeln schlagen – sehr zur Freude seiner Frau
             Danjela. Doch statt Ruhe findet er zwischen Beeten und Gartenzwergen
             dunkle Geheimnisse, die besser vergraben geblieben wären.
+  - segment:
+      segment-contents:
+        - type: block-text-obj
+          block-text: >-
+            **Freddy Schissler** *ist Journalist, Autor und außerdem ein
+            begnadeter Pianist. Die lange Kriminacht begleitet der langjährige
+            Redakteur der Allgäuer Zeitung Freddy Schissler mit kriminell guten
+            Melodien am Klavier.*
+
+
+            *Foto Freddy Schissler: Ralf Lienert*
 ---

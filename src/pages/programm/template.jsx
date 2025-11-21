@@ -5,6 +5,7 @@ import Layout from "../../components/layout"
 import LineBreak from "../../components/linebreak"
 import Pfeil from "../../images/arrows/pfeil_tickets.svg"
 import Slider from "../../components/slider"
+import date_ger_locale from "../../components/date_ger_locale"
 
 function ContentHeader({ header }) {
   const valid_header = !(header === null || header === "" || header === undefined)
@@ -88,6 +89,8 @@ export default function ProgrammpunktTemplate({ data }) {
       <div className="bordered halved-mobilefull" style={{ marginTop: 0, borderTop: 0 }}>
         <div className="padded">
           {/* conditionally render einlass and begin fields, their seperator and a linebreak */}
+          {(has_beginn && (!(frontmatter?.beginn_ignore))) ?
+            <>{date_ger_locale(frontmatter?.beginn, false) + " "}</> : <></>}
           {has_einlass ? <>{frontmatter?.einlass.split("T").at(-1)} Einlass</> : <></>}
           {has_einlass && has_beginn ? <> / </> : <></>}
           {has_beginn ?
