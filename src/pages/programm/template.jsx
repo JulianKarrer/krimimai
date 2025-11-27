@@ -6,6 +6,7 @@ import LineBreak from "../../components/linebreak"
 import Pfeil from "../../images/arrows/pfeil_tickets.svg"
 import Slider from "../../components/slider"
 import date_ger_locale from "../../components/date_ger_locale"
+import Seo from "../../components/seo"
 
 function ContentHeader({ header }) {
   const valid_header = !(header === null || header === "" || header === undefined)
@@ -45,7 +46,6 @@ export default function ProgrammpunktTemplate({ data }) {
   const has_einlass = !isnt(frontmatter?.einlass)
   const has_beginn = !isnt(frontmatter?.beginn)
   const has_remark = !isnt(frontmatter?.start_remark)
-  console.log(frontmatter, has_einlass, has_beginn, has_remark)
 
   return (
     <Layout style={{ background: bg_colour_subpage }}>
@@ -151,6 +151,18 @@ export default function ProgrammpunktTemplate({ data }) {
 
     </Layout >
   )
+}
+
+export const Head = ({ data }) => {
+  // get relevant metadata for SEO head
+  const { markdownRemark } = data
+  const { frontmatter } = markdownRemark
+  const { name } = frontmatter
+  const { author } = frontmatter
+  const { ort } = frontmatter
+  const { beginn } = frontmatter
+  const { ticketlink } = frontmatter
+  return <Seo title={name + " | " + author} description={`${name} von ${author} findet am ${date_ger_locale(beginn)} hier statt: ${ort}. Tickets unter: ${ticketlink}`} />
 }
 
 export const query = graphql`

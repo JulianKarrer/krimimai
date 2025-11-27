@@ -16,10 +16,11 @@ import date_ger_locale from "../components/date_ger_locale";
 
 import * as styles from "./index.module.css"
 import LineBreak from "../components/linebreak"
+import { useMemo } from "react";
 
 const slugify = require('slugify')
 
-function ProgrammPunkt({ style, className, programmpunkt, bg_colour, k }) {
+function ProgrammPunkt({ style, className, programmpunkt, bg_colour }) {
   const portraits = programmpunkt.portrait_list.map((img) => {
     return {
       img: getImage(img.portrait_obj.portrait_image),
@@ -27,10 +28,9 @@ function ProgrammPunkt({ style, className, programmpunkt, bg_colour, k }) {
     }
   })
 
-
   const linkto = "/programm/" + slugify(programmpunkt.name, { lower: true })
   return (
-    <div style={{ background: bg_colour, position: "relative", border: "var(--border)", ...style }} className={className} key={k}>
+    <div style={{ background: bg_colour, position: "relative", border: "var(--border)", ...style }} className={className}>
       {/* portraits */}
       <Link to={linkto} draggable={false}>
         <div style={{ aspectRatio: 1 }}>
@@ -110,14 +110,21 @@ const IndexPage = () => {
   const { date, bg_colour_subpage, instagram_link_landing, kobr_link_landing,
     ueber_uns_text, ueber_uns_image, } = contentYaml
   const { nodes } = allMarkdownRemark
-  const programmpunkte = nodes.map(({ frontmatter }) => (frontmatter))
-    .sort((ia, ib) => {
-      const a = ia.beginn
-      const b = ib.beginn
-      return a >= b ? 1 : (
-        a <= b ? 0 : -1
-      )
-    }).filter((elem) => { return !(elem?.disable) })
+
+  const programmpunkte = useMemo(() => {
+    return nodes
+      .map(({ frontmatter }) => (frontmatter))
+      .filter((elem) => { return !(elem?.disable) })
+      .sort((ia, ib) => {
+        const a = ia.beginn.replaceAll('.', '-') // replace dot with - to confirm to 
+        const b = ib.beginn.replaceAll('.', '-') // DateString format and parse to Date int
+        const date_a = Date.parse(a)
+        const date_b = Date.parse(b)
+        // then just compare the dates via subtraction and clamp
+        const res = Math.min(1, Math.max(-1, date_a - date_b))
+        return res
+      })
+  }, [nodes])
 
   // get normalized mouse interaction
 
@@ -228,7 +235,7 @@ const IndexPage = () => {
           Folgende Tatorte sind geplant:
         </p>
         <div className="programm-grid">
-          {programmpunkte.map((punkt, k) => <ProgrammPunkt programmpunkt={punkt} bg_colour={bg_colour_subpage} k={k} />)}
+          {programmpunkte.map((punkt, k) => <ProgrammPunkt programmpunkt={punkt} bg_colour={bg_colour_subpage} key={k} />)}
         </div>
       </div>
 

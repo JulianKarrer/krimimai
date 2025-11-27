@@ -1,8 +1,3 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
- */
 
 /**
  * @type {import('gatsby').GatsbyConfig}
@@ -62,10 +57,10 @@ module.exports = {
         name: `Mörderischer Mai`,
         short_name: `krimimai`,
         start_url: `/`,
-        background_color: `00A8E9`,
+        background_color: `#00A8E9`,
         // This will impact how browsers show your PWA/website
         // https://css-tricks.com/meta-theme-color-and-trickery/
-        theme_color: `00A8E9`,
+        theme_color: `#00A8E9`,
         display: `minimal-ui`,
         icon: `src/images/favicon.png`,
       },
@@ -80,16 +75,6 @@ module.exports = {
     // allow import of svg files
     {
       resolve: "gatsby-plugin-react-svg",
-      // options: {
-      //   rule: {
-      //     include: /\.svg$/,
-      //     options: {
-      //       props: {
-      //         className: "my-class",
-      //       }
-      //     }
-      //   }
-      // }
     }
   ],
 }
