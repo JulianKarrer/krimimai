@@ -131,7 +131,7 @@ export default function ProgrammpunktTemplate({ data }) {
       {frontmatter?.contents ? frontmatter?.contents.map(({ segment }, i) => <>
         <ContentHeader key={"content-header" + i} header={segment.segment_title}></ContentHeader>
         <div className="bordered-topless padded halved-mobilefull" key={"content-block" + i}>
-          {segment.segment_contents.map((block, j) => {
+          {segment?.segment_contents && segment?.segment_contents.map((block, j) => {
             return <div className="block-container">
               {block.block_text ?
                 <LineBreak text={block.block_text} />
