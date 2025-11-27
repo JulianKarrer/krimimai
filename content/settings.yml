@@ -5,18 +5,22 @@ bg-colour-impressum: "#edcb8d"
 instagram-link-landing: https://www.instagram.com/krimimai/
 kobr-link-landing: https://www.kobr.de/
 ueber-uns-image: settings/kobr.png
-ueber-uns-text: "Michael und Silke Kobr sind seit langem ein eingespieltes Team
-  – beruflich wie privat, schließlich haben sie sich in ihrem Referendariat
-  kennen und lieben gelernt. Michael Kobr schreibt seit über 20 Jahren
-  erfolgreich Kriminalromane, darunter Bestseller rund um Kommissar Kluftinger.
-  Seit einiger Zeit hat seine Frau Silke dem Lehrerzimmer den Rücken gekehrt, um
-  ihn tatkräftig zu unterstützen: Sie arbeitet eng mit Michael zusammen, bringt
-  neue Ideen ein und organisiert vieles im Hintergrund. Aktuell widmen sich die
-  beiden einem besonderen Projekt – der Organisation des Allgäuer
-  Krimifestivals. Mit ihrer gemeinsamen Leidenschaft für spannende Geschichten
-  und ihrer tiefen Verbundenheit zur Region wollen sie ein einzigartiges Event
-  schaffen, das Krimifans aus nah und fern begeistern und das Allgäu als
-  Krimiregion noch bekannter machen soll."
+ueber-uns-text: >-
+  Michael und Silke Kobr sind seit langem ein eingespieltes Team – beruflich wie
+  privat, schließlich haben sie sich in ihrem Referendariat kennen und lieben
+  gelernt. Michael Kobr schreibt seit über 20 Jahren erfolgreich Kriminalromane,
+  darunter Bestseller rund um Kommissar Kluftinger. Seit einiger Zeit hat seine
+  Frau Silke dem Lehrerzimmer den Rücken gekehrt, um ihn tatkräftig zu
+  unterstützen: Sie arbeitet eng mit Michael zusammen, bringt neue Ideen ein und
+  organisiert vieles im Hintergrund. Aktuell widmen sich die beiden einem
+  besonderen Projekt – der Organisation des Allgäuer Krimifestivals. Mit ihrer
+  gemeinsamen Leidenschaft für spannende Geschichten und ihrer tiefen
+  Verbundenheit zur Region wollen sie ein einzigartiges Event schaffen, das
+  Krimifans aus nah und fern begeistern und das Allgäu als Krimiregion noch
+  bekannter machen soll.
+
+
+  *Bildquelle: Julia Rotter*
 partner-list:
   - partner-obj:
       partner-link: https://www.moebel-wassermann.de/
