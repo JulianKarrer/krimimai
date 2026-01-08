@@ -36,12 +36,7 @@ contents:
             Jahren – alle freitags, alle nahe des Exerzierplatzes. Was hatte ihr
             Vater damit zu tun? Und warum interessiert sich plötzlich die
             Polizei für sie? Toni beginnt zu recherchieren – und die
-            Vergangenheit wird wieder bedrohlich aktuell. Peter Probst, 1957 in
-            München geboren, ist Drehbuch- und Romanautor, ausgezeichnet u. a.
-            mit dem Grimme-Preis. Neben Kriminalromanen (dtv) schrieb er mit
-            Amelie Fried eine Kinderkrimi-Reihe und zuletzt den autofiktionalen
-            Roman “Ich habe Schleyer nicht entführt”. Sein neuestes Buch wurde
-            von einem unaufgeklärten Fall inspiriert.
+            Vergangenheit wird wieder bedrohlich aktuell. 
 
 
             *Foto Peter Probst: Dominik Rössler Verlagsgruppe PRH*
