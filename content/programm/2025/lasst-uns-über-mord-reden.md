@@ -6,7 +6,7 @@ ort: In der Alten Aussegnungshalle in MM, Friedhofweg 9
 einlass: 2026.05.10T10:00
 beginn: 2026.05.10T10:30
 beginn-ignore: false
-price: "12"
+price: "15"
 ticketlink: https://krimimai.reservix.de/tickets-lasst-uns-ueber-mord-reden-in-memmingen-alte-aussegnungshalle-am-waldfriedhof-am-10-5-2026/e2486851
 portrait-list:
   - portrait-obj:
