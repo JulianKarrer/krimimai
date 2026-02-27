@@ -1,4 +1,5 @@
 ---
+disable: false
 name: Kluftinger-Führung – Auf den Spuren des Kult-Kommissars
 author: Stadt Memmingen
 ort: Schrannenplatz am Fischerbrunnen
@@ -8,7 +9,7 @@ start-remark: |-
   Dauer ca. 1,5 Stunden
   17 € inkl. Kässpatzen
 price: "9"
-ticketlink: https://www.tourismus-memmingen.de/
+ticketlink: https://www.tourismus-memmingen.de/turnusfuehrungen.html#/erlebnisse/VIT/8f09c653-32fb-4d3f-b4f5-4c45c0b2601a/auf-den-spuren-von-kommissar-kluftinger
 portrait-list:
   - portrait-obj:
       portrait-image: studioerika_01884_a_hearty_rustic_bowl_of_ksesptzle_tradition_658e687f-3780-4201-b7c0-4c7dff4c97ca_1.jpg
