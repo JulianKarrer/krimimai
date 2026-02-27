@@ -8,7 +8,7 @@ beginn: 2026.05.09T16:00
 beginn-ignore: false
 start-remark: Dauer ca. 1,5 Stunden
 price: "9"
-ticketlink: https://www.tourismus-memmingen.de/
+ticketlink: https://www.tourismus-memmingen.de/turnusfuehrungen.html#/erlebnisse/VIT/1abffa27-53ad-4d90-bf06-7f19b2283ce0/krimi-stadtfuehrung--der-mordfall-brandmueller
 portrait-list:
   - portrait-obj:
       portrait-image: krimistadtführung-brandmüller.jpg
