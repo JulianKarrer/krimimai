@@ -1,5 +1,5 @@
 ---
-disable: false
+disable: true
 name: Read & Act
 author: Volker Klüpfel
 ort: Antoniersaal
