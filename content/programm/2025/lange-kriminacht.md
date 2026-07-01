@@ -1,5 +1,5 @@
 ---
-disable: false
+disable: true
 name: Lange Kriminacht
 author: Mit 4 Autor*innen
 ort: Kino Rex Palast, Bahnhofstraße 16, MM
