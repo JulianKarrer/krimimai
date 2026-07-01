@@ -1,5 +1,5 @@
 ---
-disable: false
+disable: true
 name: Stories & Songs
 author: Michael Kobr & Dieter Thomas Kuhn
 ort: ino Rex Palast, Bahnhofstraße 16, MM
