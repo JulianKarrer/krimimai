@@ -1,5 +1,5 @@
 ---
-disable: false
+disable: true
 name: Lasst uns über Mord reden
 author: Sabine Rogg & Michael Kobr
 ort: In der Alten Aussegnungshalle in MM, Friedhofweg 9
