@@ -1,5 +1,5 @@
 ---
-disable: false
+disable: true
 name: Krimi-Führung „Der Mordfall Brandmüller“
 author: Stadt Memmingen
 ort: Landratsamt Memmingen, Herrenstraße
