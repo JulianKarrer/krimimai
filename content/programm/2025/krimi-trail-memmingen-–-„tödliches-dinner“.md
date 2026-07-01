@@ -1,4 +1,5 @@
 ---
+disable: true
 name: Krimi-Trail Memmingen – „Tödliches Dinner“
 author: Stadt Memmingen
 ort: Marktplatz am Brunnen
