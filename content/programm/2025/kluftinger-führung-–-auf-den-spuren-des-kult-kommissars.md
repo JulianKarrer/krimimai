@@ -1,5 +1,5 @@
 ---
-disable: false
+disable: true
 name: Kluftinger-Führung – Auf den Spuren des Kult-Kommissars
 author: Stadt Memmingen
 ort: Schrannenplatz am Fischerbrunnen
