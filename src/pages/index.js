@@ -70,6 +70,7 @@ const IndexPage = () => {
      query IndexPageQuery {
       contentYaml {
         date
+        programm_intro_text
         bg_colour_subpage
         instagram_link_landing
         kobr_link_landing
@@ -107,7 +108,7 @@ const IndexPage = () => {
     }
 `)
   const { contentYaml, allMarkdownRemark } = data
-  const { date, bg_colour_subpage, instagram_link_landing, kobr_link_landing,
+  const { date, programm_intro_text, bg_colour_subpage, instagram_link_landing, kobr_link_landing,
     ueber_uns_text, ueber_uns_image, } = contentYaml
   const { nodes } = allMarkdownRemark
 
@@ -231,8 +232,7 @@ const IndexPage = () => {
       <div className="bordered" style={{ paddingBottom: "var(--inner-padding)" }}>
         <h1 style={{ borderBottom: "var(--border)" }}>Programm</h1>
         <p style={{ padding: "var(--inner-padding)" }}>
-          Der mörderische Mai hat einiges zu bieten.<br />
-          Folgende Tatorte sind geplant:
+          <LineBreak text={programm_intro_text} />
         </p>
         <div className="programm-grid">
           {programmpunkte.map((punkt, k) => <ProgrammPunkt programmpunkt={punkt} bg_colour={bg_colour_subpage} key={k} />)}

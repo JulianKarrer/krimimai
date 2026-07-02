@@ -41,6 +41,11 @@ collections:
             widget: 'color' 
           }
           - { 
+            name: 'programm-intro-text', 
+            label: 'Text oben im Block "Programm" auf der Hauptseite', 
+            widget: 'text',
+          }
+          - { 
             name: 'instagram-link-landing', 
             label: 'Link zur Instagram-Seite', 
             widget: 'string',

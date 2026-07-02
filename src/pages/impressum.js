@@ -17,7 +17,6 @@ const ImpressumPage = () => {
     `)
     const { contentYaml } = data
     const { impressum_text, datenschutz_text, bg_colour_impressum } = contentYaml
-    console.log(data)
     return (
         <Layout bg_override={bg_colour_impressum}>
             <div className="container-scaling" style={{ userSelect: "auto" }}>
