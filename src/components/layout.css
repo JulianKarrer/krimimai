@@ -1,6 +1,6 @@
 :root {
   --color-text: #443A39;
-  --color-text-highlight: #CBDCDC;
+  --color-text-highlight: #922A1F;
 
   --border-width: 6px;
   --border: var(--border-width) solid var(--color-text);
