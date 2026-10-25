@@ -1,41 +1,41 @@
 ---
-disable: true
-name: Crime & Dine
-author: Martina Parker
-ort: Schwarze Katz, Theaterplatz 2, MM
-einlass: 2026.05.10T18:00
-beginn: 2026.05.10T19:00
+disable: false
+name: Graz und die dunklen Wasser der Mur
+author: Robert Preis
+ort: |-
+  Kempten-Museum im Zumsteinhaus 
+  Residenzplatz 31
+  87435 Kempten 
+einlass: 2027.05.06T19:00
+beginn: 2027.05.06T19:30
 beginn-ignore: false
 price: "20"
-ticketlink: https://krimimai.reservix.de/tickets-crime-dine-in-memmingen-schwarze-katz-am-10-5-2026/e2475071
+ticketlink: ""
 portrait-list:
   - portrait-obj:
-      portrait-image: thumbnail_mp-oliver-topf_3.jpg
-      portrait-name: Martina Parker
+      portrait-image: preis.jpg
+      portrait-name: Robert Preis
 contents:
   - segment:
       segment-contents:
         - type: block-image-obj
-          block-image: miss-vergnuegen-taschenbuch-martina-parker.webp
+          block-image: graz-und-die-dunklen-wasser-der-mur_original_rgb.jpg
         - type: block-text-obj
-          block-text: "**Miss Vergnügen** - Miss Brooks, eine exzentrische Britin, wird
-            von ihrem Mann in einer fremden Stadt ausgesetzt und stolpert prompt
-            in eine Reihe mysteriöser Ereignisse. Als neue Beauty-Beraterin bei
-            Très Loué gerät sie in die schillernde, aber undurchsichtige Welt
-            der Kosmetikbranche – und deckt dabei dunkle Geheimnisse auf."
+          block-text: "Eigentlich hat Sonderermittler Armin Trost sich aus dem Dienst
+            zurückgezogen. Doch als ein international bekannter Schauspieler
+            Morddrohungen erhält, soll er während einer Oldtimerrallye durch die
+            Steiermark für dessen Sicherheit sorgen. Was als Personenschutz
+            beginnt, entpuppt sich schnell als perfides Spiel, und Trost muss
+            sich die Frage stellen: Wem kann er noch trauen – wer ist der Jäger
+            und wer der Gejagte?"
         - type: block-text-obj
-          block-text: "**Anbandelt** - Eigentlich wollten sie nur die seltenen Pflanzen im
-            Wüstengarten bewundern, doch prompt stolpern die Gartenfreundinnen
-            über einen leblosen Mann im Dornbusch. "
-        - type: block-image-obj
-          block-image: anbandelt_g-kb_rly.jpg
-        - type: block-text-obj
-          block-text: >-
-            *Martina Parker zählt zu den erfolgreichsten Autorinnen Österreichs.
-            Sie ist bekannt für ihre Gartenkrimis von „Zuagroast“ bis
-            „Anbandelt“, sowie für den Kriminalroman „Miss Vergnügen“, Auftakt
-            für die neue Miss Brooks Serie. Alle ihre Bücher sind Bestseller.*
+          block-text: >
+            Robert Preis wurde 1972 in Graz geboren. Nach dem Publizistik und
+            Ethnologiestudium in Wien lebt er heute mit seiner Familie wieder in
+            der Nähe seiner Heimatstadt. Er ist Journalist, Autor zahlreicher
+            Romane und Sachbücher und Initiator des FINE CRIME-Krimifestivals™
+            in Graz.
 
 
-            *Foto Martina Parker: Oliver Topf*
+            Foto: Niki Schreinlechner
 ---
