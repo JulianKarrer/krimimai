@@ -7,7 +7,7 @@ ort: |-
   Bahnhofstraße 16
   87700 Memmingen 
 einlass: 2027.05.01T18:30
-beginn: 2026.05.01T19:30
+beginn: 2027.05.01T19:30
 beginn-ignore: false
 price: "22"
 ticketlink: https://krimimai.reservix.de/tickets-kluepfel-kobr-kluftinger-in-memmingen-rex-palast-am-1-5-2027/e2626267
