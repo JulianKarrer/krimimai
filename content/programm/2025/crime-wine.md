@@ -19,14 +19,15 @@ contents:
   - segment:
       segment-contents:
         - type: block-text-obj
-          block-text: Das sind keine Widersprüche wenn Thomas Raab und Bernhard Aichner
+          block-text: >-
+            Das sind keine Widersprüche wenn Thomas Raab und Bernhard Aichner
             die Bühne rockten. Im Gegenteil, beweisen sie mit ihrem Programm
             doch eindrucksvoll, dass sich Spannung, Humor und Musik wunderbar
             verbinden lassen. Thomas & Bernhard sorgen für Nervenkitzel und
             strapazieren zugleich auch die Lachmuskeln. Ein unvergesslicher
             Krimiabend ist vorprogrammiert.
-        - type: block-text-obj
-          block-text: >-
+
+
             Thomas Raab: 
 
             Sandstrände, Wochenmärkte, Pizza als Grundnahrungsmittel – diesen Sommer kennen wir. Ornella Lazzaro kennt ihn besser: Die ehemalige Küstenwächterin hat das Meer
