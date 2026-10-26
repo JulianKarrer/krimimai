@@ -30,13 +30,9 @@ contents:
 
             Thomas Raab: 
 
-            Sandstrände, Wochenmärkte, Pizza als Grundnahrungsmittel – diesen Sommer kennen wir. Ornella Lazzaro kennt ihn besser: Die ehemalige Küstenwächterin hat das Meer
+            Sandstrände, Wochenmärkte, Pizza als Grundnahrungsmittel – diesen Sommer kennen wir. Ornella Lazzaro kennt ihn besser: Die ehemalige Küstenwächterin hat das Meer gegen eine kleine Tabaccheria in Bibione getauscht. Seither verkauft sie Rätselhefte und Lottoscheine, geht hin und wieder mit Nonna Lucia fischen. Mehr Abenteuer braucht sie nicht. Bis sich ein Tourist in den Plastiksessel vor ihrem Laden verirrt. Bayern-Trikot. Adiletten. Eine Flasche Limoncello. Ausgerechnet. Ornella kann das Zeug nicht leiden. Böse Überraschungen noch weniger. Denn der Mann ist tot und trägt eine Grußkarte bei sich. Für Ornella … 
 
-            gegen eine kleine Tabaccheria in Bibione getauscht. Seither verkauft sie Rätselhefte und Lottoscheine, geht hin und wieder mit Nonna Lucia fischen. Mehr Abenteuer braucht sie nicht. Bis sich ein Tourist in den Plastiksessel vor ihrem Laden verirrt. Bayern-Trikot. Adiletten. Eine Flasche Limoncello. Ausgerechnet. Ornella kann das Zeug nicht leiden.
-
-            Böse Überraschungen noch weniger. Denn der Mann ist tot und trägt eine Grußkarte bei sich. Für Ornella … Was als dunkles Spiel beginnt, führt hinter die Urlaubskulisse – zu
-
-            einsamen Lagunen, prächtigen Yachten, dorthin, wo Ornella als »la capitana« bei der Küstenwache eine andere war: aufs Meer. Es sind nicht die Geretteten, die ihr den Schlaf rauben, sondern die Toten. Und manchmal tauchen sie wieder auf.
+            Was als dunkles Spiel beginnt, führt hinter die Urlaubskulisse – zu einsamen Lagunen, prächtigen Yachten, dorthin, wo Ornella als »la capitana« bei der Küstenwache eine andere war: aufs Meer. Es sind nicht die Geretteten, die ihr den Schlaf rauben, sondern die Toten. Und manchmal tauchen sie wieder auf.
 
 
 
