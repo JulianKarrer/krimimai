@@ -10,7 +10,7 @@ einlass: 2027.05.11T19:00
 beginn: 2027.05.11T19:30
 beginn-ignore: false
 price: "20"
-ticketlink: ""
+ticketlink: https://www.reservix.de/tickets-das-dritte-grab-in-kempten-allgaeu-stadtbibliothek-kempten-am-11-5-2027/e2630756?utm_medium=referral&utm_source=dynamic&utm_campaign=dynamic-prom-lb-o&utm_content=kobr%20books%20-%20Michael%20Kobr%20%2829569%29
 portrait-list:
   - portrait-obj:
       portrait-image: alexbeer-1.jpg
