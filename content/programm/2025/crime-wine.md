@@ -45,7 +45,7 @@ contents:
 
             Die Totenfrau kehrt zurück - die Fortsetzung der internationalen Erfolgsstory
 
-            Zehn Jahre sind vergangen, seitdem Blum das letzte Mal gemordet hat. Sie lebt, gemeinsam mit ihrem Partner Reza, auf einer Yacht in Kroatien. Um Geld zu verdienen, bieten sie Charterausflüge zu den umliegenden Inseln an, ansonsten leben sie unauffällig und zurückgezogen. Blum glaubt nicht mehr  daran, entdeckt zu werden ― bis sie durch einen unerwarteten Todesfall an Bord, dazu gezwungen wird  erneut ihre Grenzen zumehr daranten. Nicht nur ihres und Rezas Leben steht auf dem Spiel, sondern auch das ihrer Kinder.
+            Zehn Jahre sind vergangen, seitdem Blum das letzte Mal gemordet hat. Sie lebt, gemeinsam mit ihrem Partner Reza, auf einer Yacht in Kroatien. Um Geld zu verdienen, bieten sie Charterausflüge zu den umliegenden Inseln an, ansonsten leben sie unauffällig und zurückgezogen. Blum glaubt nicht mehr  daran, entdeckt zu werden ― bis sie durch einen unerwarteten Todesfall an Bord, dazu gezwungen wird  erneut ihre Grenzen zu überschreiten. Nicht nur ihres und Rezas Leben steht auf dem Spiel, sondern auch das ihrer Kinder.
 
 
 
