@@ -11,7 +11,7 @@ einlass: 2027.05.02T10:00
 beginn: 2027.05.02T10:30
 beginn-ignore: false
 price: "20"
-ticketlink: ""
+ticketlink: https://www.reservix.de/tickets-commissario-gaetano-und-die-traenen-des-vesuvs-in-kempten-allgaeu-kleine-thermen-im-archaeologischen-park-cambodunum-am-2-5-2027/e2630706?utm_medium=referral&utm_source=dynamic&utm_campaign=dynamic-prom-lb-o&utm_content=kobr%20books%20-%20Michael%20Kobr%20%2829569%29
 portrait-list:
   - portrait-obj:
       portrait-image: unbenannt-1.jpg
