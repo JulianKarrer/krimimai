@@ -1,41 +1,35 @@
 ---
 disable: true
-name: Read & Act
-author: Volker Klüpfel
-ort: Antoniersaal
-einlass: 2026.05.12T19:00
-beginn: 2026.05.12T19:30
+name: Alles wird Asche
+author: Nele Neuhaus
+ort: |-
+  Aula der Sebastian-Lotzer-Realschule 
+  Schlachthofstraße 32
+  87700 Memmingen 
+einlass: 2027.05.03T19:00
+beginn: 2027.05.03T19:30
 beginn-ignore: false
 price: "20"
-ticketlink: https://krimimai.reservix.de/tickets-read-act-in-memmingen-antoniersaal-am-12-5-2026/e2478903
+ticketlink: ""
 portrait-list:
   - portrait-obj:
-      portrait-image: klüpfel-c-sonja-herpich.jpg
-      portrait-name: Volker Klüpfel
-  - portrait-obj:
-      portrait-image: 2023-06-08-11.35.51-1-1-.jpg
-      portrait-name: Sarah Lavinia Schmidbauer
+      portrait-image: neleneuhaus.jpg
+      portrait-name: Nele Neuhaus
 contents:
   - segment:
       segment-contents:
         - type: block-text-obj
           block-text: >-
-            **Volker Klüpfel**, *geboren in Altusried, studierte
-            Politikwissenschaft und Geschichte in Bamberg und arbeitete als
-            Journalist, bevor er sich ganz dem freien Schreiben widmete.
-            Gemeinsam mit Michael Kobr landete er mit der Kultreihe um Kommissar
-            Kluftinger große Erfolge. Zusammen mit der Schauspielerin Sarah
-            Lavinia Schmidbauer stellt er seine beiden Krimis vor.*
+            Ein tödlicher Unfall und eine eiskalte Mordserie. Der neue
+            Bestseller von Nele Neuhaus.
+
+            Eine Frau stirbt in ihrer brennenden Villa im Taunus. Ein Bauunternehmer hängt kopfüber im Rohbau eines Frankfurter Hochhauses, den Fuß in einem Seil verfangen und qualvoll erstickt. Was zunächst nach Unfällen aussieht, entpuppt sich als eine brutale und raffinierte Mordserie. Die Ermittlungen führen Oliver von Bodenstein und Pia Sander in den Umkreis des tödlich verunglückten Tech-Milliardärs Patrick Brinkhoff, Entwickler eines bahnbrechenden KI-Chatbots. Während Pia und Bodenstein noch versuchen, das dichte Netz aus Loyalitäten in Brinkhoffs Softwarefirma und Familie zu entwirren, stoßen sie auf weitere Morde, die alle mit Brinkhoff zusammenhängen. Pia und Bodenstein müssen einen Mörder stoppen, der keine Gnade kennt und eiskalt plant.
 
 
-            Mit „Wenn Ende gut, dann alles – Das einsame Kind“ startet er seine erste Solo-Krimireihe. Tommi, ein chaotischer Möchtegern-Autor, lebt mangels Geld im Wohnmobil seines Vaters – gemeinsam mit seiner klugen ukrainischen Putzfrau Svetlana. Als die beiden ein verlassenes Mädchen am Waldrand finden, ahnen sie nicht, dass ihre Suche nach dessen Mutter sie mitten in ein gefährliches Verbrechen führt. Mit „Mord ist die beste Beseitigung“ stellt Klüpfel den zweiten Band seiner Reihe vor. 
+            Nele Neuhaus, geboren in Münster / Westfalen, lebt seit ihrer Kindheit im Taunus und schreibt bereits ebenso lange. Ihr 2010 erschienener Kriminalroman Schneewittchen muss sterben brachte ihr den großen Durchbruch, heute ist sie die erfolgreichste Krimiautorin Deutschlands.
 
 
-            *Foto Volker Klüpfel: Sonja Herpich
-
-            Foto Sarah Lavinia Schmidbauer: Daniela Pfeil*
+            *Foto Nele Neuhaus: Jana Edisonga*
         - type: block-image-obj
-          block-image: neukluepfel_vwenn_ende_gut_svetlana_1_255169_300dpi.jpg
-        - type: block-image-obj
-          block-image: 153_60358_259971.jpg
+          block-image: ans_9783550202261_2d.jpg
 ---
