@@ -10,7 +10,7 @@ einlass: 2027.05.04T18:30
 beginn: 2027.05.04T19:30
 beginn-ignore: false
 price: "22"
-ticketlink: ""
+ticketlink: https://www.reservix.de/tickets-oesterreichischer-krimigipfel-in-bad-groenenbach-autohaus-rigatos-am-4-5-2027/e2630752?utm_medium=referral&utm_source=dynamic&utm_campaign=dynamic-prom-lb-o&utm_content=kobr%20books%20-%20Michael%20Kobr%20%2829569%29
 portrait-list:
   - portrait-obj:
       portrait-image: raabaichner.jpg
