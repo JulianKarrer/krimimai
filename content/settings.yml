@@ -31,10 +31,6 @@ ueber-uns-text: >-
   *Bildquelle: Julia Rotter*
 partner-list:
   - partner-obj:
-      partner-link: https://www.moebel-wassermann.de/
-      partner-name: Möbel Wassermann
-      partner-image: settings/wassermann.png
-  - partner-obj:
       partner-image: settings/schwarzekatze.png
       partner-name: Schwarze Katze
       partner-link: https://www.katz-mm.de/
