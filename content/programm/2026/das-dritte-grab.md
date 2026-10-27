@@ -23,7 +23,7 @@ contents:
         - type: block-text-obj
           block-text: >
             Ein verschwundener Politiker, eine erschütternde Mordserie und ein
-            Ermittler, für den alles auf dem Spiel steht ...
+            Ermittler, für den alles auf dem Spiel steht. 
 
             Wien 1923. Die Stadt taumelt zwischen Elend und Hoffnung. Inmitten dieser zerrissenen Welt verschwindet der Politiker und einstige Unterweltboss Veit Kolja spurlos. Für Inspektor August Emmerich, der mit Kolja befreundet ist, beginnt eine fieberhafte Suche. Als kurz darauf zwei ehemalige Schleichhändler ermordet aufgefunden werden, führen die Ermittlungen ins Gangster-Milieu. Haben die Morde etwas mit Koljas Verschwinden zu tun? Ist auch er tot? Emmerich ist gezwungen, in Wiens dunkelste Winkel hinabzusteigen und sich den Schatten der Vergangenheit zu stellen. Dabei gerät er selbst ins Fadenkreuz des Mörders und muss sich fragen, ob er für diesen Fall bereit ist, alles zu riskieren
         - type: block-text-obj
