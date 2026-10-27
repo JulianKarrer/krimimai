@@ -21,8 +21,8 @@ contents:
         - type: block-text-obj
           block-text: >-
             Das sind keine Widersprüche wenn Thomas Raab und Bernhard Aichner
-            die Bühne rockten. Im Gegenteil, beweisen sie mit ihrem Programm
-            doch eindrucksvoll, dass sich Spannung, Humor und Musik wunderbar
+            die Bühne rocken. Im Gegenteil, beweisen sie mit ihrem Programm doch
+            eindrucksvoll, dass sich Spannung, Humor und Musik wunderbar
             verbinden lassen. Thomas & Bernhard sorgen für Nervenkitzel und
             strapazieren zugleich auch die Lachmuskeln. Ein unvergesslicher
             Krimiabend ist vorprogrammiert.
