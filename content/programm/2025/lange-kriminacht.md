@@ -14,7 +14,7 @@ price: "20"
 ticketlink: https://www.reservix.de/tickets-commissario-gaetano-und-die-traenen-des-vesuvs-in-kempten-allgaeu-kleine-thermen-im-archaeologischen-park-cambodunum-am-2-5-2027/e2630706?utm_medium=referral&utm_source=dynamic&utm_campaign=dynamic-prom-lb-o&utm_content=kobr%20books%20-%20Michael%20Kobr%20%2829569%29
 portrait-list:
   - portrait-obj:
-      portrait-image: unbenannt-1.jpg
+      portrait-image: di_nola_fabio_1_c_natalie_schulda_photo_and_art_2023.jpg
       portrait-name: Fabio Nola
 contents:
   - segment:
