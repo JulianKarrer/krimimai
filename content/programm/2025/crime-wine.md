@@ -13,8 +13,11 @@ price: "22"
 ticketlink: https://www.reservix.de/tickets-oesterreichischer-krimigipfel-in-bad-groenenbach-autohaus-rigatos-am-4-5-2027/e2630752?utm_medium=referral&utm_source=dynamic&utm_campaign=dynamic-prom-lb-o&utm_content=kobr%20books%20-%20Michael%20Kobr%20%2829569%29
 portrait-list:
   - portrait-obj:
-      portrait-image: raabaichner.jpg
-      portrait-name: "Thomas Raab & Bernhard Aichner "
+      portrait-name: Thomas Raab
+      portrait-image: image1-farbe.jpg
+  - portrait-obj:
+      portrait-image: bernhardaichnerbearbeitet.png
+      portrait-name: "Bernhard Aichner "
 contents:
   - segment:
       segment-contents:
