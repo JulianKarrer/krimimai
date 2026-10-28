@@ -13,7 +13,7 @@ price: "22"
 ticketlink: https://krimimai.reservix.de/tickets-kluepfel-kobr-kluftinger-in-memmingen-rex-palast-am-1-5-2027/e2626267
 portrait-list:
   - portrait-obj:
-      portrait-image: kluepfelkobr.jpg
+      portrait-image: michiundvolker.png
       portrait-name: Volker Klüpfel & Michael Kobr
 contents:
   - segment:
