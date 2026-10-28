@@ -2,7 +2,7 @@
 disable: false
 name: Dunkle Geheimnisse - True Crime Live
 author: Marion Gehlert & Ludwig Waldinger
-ort: Rex Palast, Bahnhofstraße 16, MM
+ort: Rex Palast, Bahnhofstraße 16, 87700 Memmingen
 einlass: 2027.05.05T18:30
 beginn: 2027.05.05T19:30
 beginn-ignore: false
@@ -10,7 +10,7 @@ price: "22"
 ticketlink: https://www.reservix.de/tickets-dunkle-geheimnisse-true-crime-live-in-memmingen-rex-palast-am-5-5-2027/e2630739?utm_medium=referral&utm_source=dynamic&utm_campaign=dynamic-prom-lb-o&utm_content=kobr%20books%20-%20Michael%20Kobr%20%2829569%29
 portrait-list:
   - portrait-obj:
-      portrait-image: gehlertwaldinger.jpg
+      portrait-image: gehlertwaldingerbearbeitet.png
       portrait-name: Marion Gehlert & Ludwig Waldinger
 contents:
   - segment:
