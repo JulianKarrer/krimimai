@@ -13,7 +13,7 @@ price: "20"
 ticketlink: https://www.reservix.de/tickets-allgaeuer-krimifestival-moerderischer-mai-27-in-kempten-allgaeu-kempten-museum-im-zumsteinhaus-am-6-5-2027/e2630694?utm_medium=referral&utm_source=dynamic&utm_campaign=dynamic-prom-lb-o&utm_content=kobr%20books%20-%20Michael%20Kobr%20%2829569%29
 portrait-list:
   - portrait-obj:
-      portrait-image: preis.jpg
+      portrait-image: robertpreisbearbeitet.png
       portrait-name: Robert Preis
 contents:
   - segment:
