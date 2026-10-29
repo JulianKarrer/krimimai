@@ -53,7 +53,7 @@ const Layout = ({ children, style, bg_override }) => {
               <div className="footer-cell"><span><Link to={"/impressum"} draggable={false}>Impressum / Datenschutz</Link></span></div>
             </div>
 
-            <div className="footer-grid footer-grid-15">
+            {partner_list && <div className="footer-grid footer-grid-15">
               <div className="footer-cell" style={{
                 paddingTop: "20px",
                 // alignItems: "flex-start",
@@ -85,7 +85,7 @@ const Layout = ({ children, style, bg_override }) => {
                   {/* <StaticImage src="../images/partners/mm.jpg" width={40} /> */}
                 </div>
               </div>
-            </div>
+            </div>}
           </footer>
         </div >
       </div >

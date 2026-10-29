@@ -11,6 +11,27 @@
 const slugify = require('slugify')
 const path = require(`path`)
 
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+
+  createTypes(`
+    type ContentYaml implements Node {
+      bg_colour: String
+      partner_list: [PartnerListEntry]
+    }
+
+    type PartnerListEntry {
+      partner_obj: PartnerObject
+    }
+
+    type PartnerObject {
+      partner_name: String
+      partner_link: String
+      partner_image: File @fileByRelativePath
+    }
+  `)
+}
+
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const programmTemplate = path.resolve(`src/pages/programm/template.jsx`)
