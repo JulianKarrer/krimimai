@@ -19,7 +19,7 @@ contents:
   - segment:
       segment-contents:
         - type: block-image-obj
-          block-image: sachsenmaier_tschaetzle_ernteze1fs_272431_300dpi.jpg
+          block-image: sachsenmaier_tschaetzle_ernteze1fs_272431_300dpi-removebg-preview-1-.png
         - type: block-text-obj
           block-text: >
             Willkommen in Schwätzlingsried, dem schönsten und mörderischsten
